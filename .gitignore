@@ -1,0 +1,8 @@
+# Archivos generados por el compilador
+*.o
+
+# Archivos específicos de editores
+.vscode/
+
+# Archivos específicos del sistema operativo
+.DS_Store
