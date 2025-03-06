@@ -9,7 +9,7 @@ Check them out!
 <div align="center">
   <table style="width:80%; font-size: 20px;">
     <tr>
-      <th colspan="2">42repo</th>
+      <th colspan="2">42 OOP Projects</th>
     </tr>
     <tr>
      <td colspan="2" align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp00">Cpp00</a></td>
