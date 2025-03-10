@@ -71,41 +71,31 @@ void PhoneBook::displayDetails() const
 
 void PhoneBook::displayIndex(int n) const
 {
-    std::string truncate;
+    std::string line;
     
     if (n < 0 || n >= contactCount)
     {
-        std::cout << "Error: Índice fuera de rango." << std::endl;
+        std::cout << "Error: Index is out of range" << std::endl;
         return ;
     }
-    std::cout << "|";
-    std::cout << std::setw(10) << std::right << n;
-    std::cout << "|";
+    line = contacts[n].getFirstName();
+    std::cout << "First Name -> " << line;
+    std::cout << std::endl;
 
-    if (contacts[n].getFirstName().length() >= 10)
-        truncate = contacts[n].getFirstName().substr(0, 9) + ".";
-    else
-        truncate = contacts[n].getFirstName();
+    line = contacts[n].getLastName();
+    std::cout << "Last Name -> " << line;
+    std::cout << std::endl;
 
-    std::cout << std::setw(10) << std::right << truncate;
-    std::cout << "|";
+    line = contacts[n].getNickName();
+    std::cout << "Nick Name -> " << line;
+    std::cout << std::endl;
 
-    if (contacts[n].getLastName().length() >= 10)
-        truncate = contacts[n].getLastName().substr(0, 9) + ".";
-    else
-        truncate = contacts[n].getLastName();
+    line = contacts[n].getPhoneNumber();
+    std::cout << "Phone Number -> " << line;
+    std::cout << std::endl;
 
-    std::cout << std::setw(10) << std::right << truncate;
-    std::cout << "|";
-
-    if (contacts[n].getNickName().length() >= 10)
-        truncate = contacts[n].getNickName().substr(0, 9) + ".";
-    else
-        truncate = contacts[n].getNickName();
-
-    std::cout << std::setw(10) << std::right << truncate;
-    std::cout << "|";
-
+    line = contacts[n].getDarkestSecret();
+    std::cout << "Darkest Secret -> " << line;
     std::cout << std::endl;
 }
 
