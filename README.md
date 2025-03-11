@@ -1,6 +1,6 @@
 ## About this repository
 
-This is a collection of Object-Oriented projects at 42 Network in Barcelona. Each project is aimed at mastering various essential tools and skills for programming in C++.
+This is a collection of Object-Oriented projects at 42 Network in Barcelona. Each project is aimed at mastering various skills for programming in C++.
 
 Check them out!
 
