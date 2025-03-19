@@ -15,8 +15,8 @@ void Contact::setFirstName()
     while (true)
     {
         std::cout << "Please enter the First Name:" << std::endl;
-        std::getline(std::cin, input);
-
+        if (!std::getline(std::cin, input))
+            exit(1);
         if (isValidInput(input))
             break ;
 
@@ -33,8 +33,8 @@ void Contact::setLastName()
     while (true)
     {
         std::cout << "Please enter the Last Name:" << std::endl;
-        std::getline(std::cin, input);
-
+        if (!std::getline(std::cin, input))
+            exit(1);
         if (isValidInput(input))
             break ;
 
@@ -51,8 +51,8 @@ void Contact::setNickName()
     while (true)
     {
         std::cout << "Please enter the Nick Name:" << std::endl;
-        std::getline(std::cin, input);
-
+        if (!std::getline(std::cin, input))
+            exit(1);
         if (isValidInput(input))
             break ;
 
@@ -69,8 +69,8 @@ void Contact::setPhoneNumber()
     while (true)
     {
         std::cout << "Please enter the Phone Number:" << std::endl;
-        std::getline(std::cin, input);
-
+        if (!std::getline(std::cin, input))
+            exit(1);
         if (isValidInput(input))
             break ;
 
@@ -87,8 +87,8 @@ void Contact::setDarkestSecret()
     while (true)
     {
         std::cout << "Please enter the Darkest Secret:" << std::endl;
-        std::getline(std::cin, input);
-
+        if (!std::getline(std::cin, input))
+            exit(1);
         if (isValidInput(input))
             break ;
 

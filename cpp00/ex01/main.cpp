@@ -14,17 +14,12 @@ int main()
     while (true)
     {
         std::cout << "Enter command: ";
-        std::getline(std::cin, input);
-
+        if (!std::getline(std::cin, input))
+            exit(1);
         if (input == "ADD")
         {
             if (n > 7)
                 n = 0;
-            contact.setFirstName();
-            contact.setLastName();
-            contact.setNickName();
-            contact.setPhoneNumber();
-            contact.setDarkestSecret();
             phonebook.addContact(contact);
             n++;
         }
@@ -33,7 +28,8 @@ int main()
             phonebook.displayDetails();
             std::cout << std::endl;
             std::cout << "Please enter which index to display:" << std::endl;
-            std::getline(std::cin, input);
+            if (!std::getline(std::cin, input))
+                exit(1);
             std::stringstream(input) >> number;
             if (number <= n)
                 phonebook.displayIndex(number);

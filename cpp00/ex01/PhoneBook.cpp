@@ -4,6 +4,12 @@ PhoneBook::PhoneBook() : addIndex(0), contactCount(0) {}
 
 void PhoneBook::addContact(Contact contact)
 {
+    contact.setFirstName();
+    contact.setLastName();
+    contact.setNickName();
+    contact.setPhoneNumber();
+    contact.setDarkestSecret();
+    
     // fills with first 8 contacts
     if (contactCount < 8)
     {
