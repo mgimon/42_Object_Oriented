@@ -19,6 +19,7 @@ private:
 public:
 
     PhoneBook();
+    int  getContactCount();
     void addContact(Contact contact);
     void displayDetails() const;
     void displayIndex(int n) const;

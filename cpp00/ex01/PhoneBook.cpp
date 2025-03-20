@@ -2,6 +2,10 @@
 
 PhoneBook::PhoneBook() : addIndex(0), contactCount(0) {}
 
+int  PhoneBook::getContactCount() {
+    return this->contactCount;
+}
+
 void PhoneBook::addContact(Contact contact)
 {
     contact.setFirstName();

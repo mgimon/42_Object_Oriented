@@ -30,8 +30,11 @@ int main()
             std::cout << "Please enter which index to display:" << std::endl;
             if (!std::getline(std::cin, input))
                 exit(1);
-            std::stringstream(input) >> number;
-            if (number <= n)
+            std::stringstream ss(input);
+            ss >> number;
+            if (ss.fail() || !ss.eof())
+                std::cout << "Error: Invalid number!" << std::endl;
+            else if (number <= phonebook.getContactCount())
                 phonebook.displayIndex(number);
             else
                 std::cout << "Error: No entry found!" << std::endl;
@@ -41,7 +44,5 @@ int main()
         else
             std::cout << "Invalid command!" << std::endl;
     }
-
-
-    return 0;
+    return (0);
 }
