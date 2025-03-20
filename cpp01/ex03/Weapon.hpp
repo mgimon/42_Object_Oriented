@@ -14,7 +14,7 @@ private:
 
 public:
 
-	Weapon(std::string type) {};
+	Weapon(std::string type);
 	Weapon() {};
 	~Weapon() {};
 
