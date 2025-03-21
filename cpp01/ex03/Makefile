@@ -1,24 +1,32 @@
 NAME = violence
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
-OBJ = $(SRC:.cpp=.o)
+SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
-all: $(NAME)
+HEADER = Weapon.hpp HumanA.hpp HumanB.hpp
 
-$(NAME): $(OBJ)
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
+CC = c++
+RM = rm -f
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -g #-fsanitize=address
 
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+%.o: %.cpp Makefile ${HEADER}
+		${CC} ${CFLAGS} -c $< -o $@
+
+OBJS = ${SRCS:.cpp=.o}
+
+all:
+		@$(MAKE) ${NAME} --no-print-directory
+
+${NAME}:: ${OBJS}
+	${CC} $(CFLAGS) $(OBJS) -o ${NAME}
 
 clean:
-	rm -f $(OBJ)
+			${RM} ${OBJS}
 
-fclean: clean
-	rm -f $(NAME)
+fclean: clean 
+			${RM} ${OBJS} ${NAME}
 
-re: fclean all
+re: 
+			$(MAKE) fclean
+			$(MAKE) all
 
 .PHONY: all clean fclean re
