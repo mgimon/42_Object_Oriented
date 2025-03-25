@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 
-std::string	change_line(std::string line, std::string s1, std::string s2)
+static std::string	change_line(std::string line, std::string s1, std::string s2)
 {
     std::string result;
     size_t pos = 0;
