@@ -1,6 +1,6 @@
 NAME = copymaker
 
-SRCS = main.cpp CopyMaker.cpp
+SRCS = main.cpp
 
 HEADER = CopyMaker.hpp
 
