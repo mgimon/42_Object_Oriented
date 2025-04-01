@@ -27,13 +27,13 @@ class Fixed
 		// A/O overload ('=')
 		Fixed& operator = (const Fixed& ref);
 		// + overload ('+')
-		Fixed& operator + (const Fixed& ref);
+		Fixed operator + (const Fixed& ref);
 		// - overload ('-')
-		Fixed& operator - (const Fixed& ref);
+		Fixed operator - (const Fixed& ref);
 		// * overload ('*')
-		Fixed& operator * (const Fixed& ref);
+		Fixed operator * (const Fixed& ref);
 		// / overload ('/')
-		Fixed& operator / (const Fixed& ref);
+		Fixed operator / (const Fixed& ref);
 
 		// Pre increment overload
 		Fixed& operator++();

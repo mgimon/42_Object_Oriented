@@ -36,24 +36,32 @@ Fixed& Fixed::operator=(const Fixed& ref) {
 // toFloat used to operate correctly
 // toFloat needs this& to be de-referenced
 
-Fixed& Fixed::operator+(const Fixed& ref) {
-    this->n = (*this).toFloat() + ref.n;
-    return *this;
+Fixed Fixed::operator+(const Fixed& ref) {
+	Fixed tmp;
+
+	tmp.setRawBits(this->n + ref.getRawBits());
+    return (tmp);
 }
 
-Fixed& Fixed::operator-(const Fixed& ref) {
-    this->n = (*this).toFloat() - ref.n;
-    return *this;
+Fixed Fixed::operator-(const Fixed& ref) {
+	Fixed tmp;
+
+	tmp.setRawBits(this->n - ref.getRawBits());
+    return (tmp);
 }
 
-Fixed& Fixed::operator*(const Fixed& ref) {
-    this->n = (*this).toFloat() * ref.n;
-    return *this;
+Fixed Fixed::operator*(const Fixed& ref) {
+	Fixed tmp;
+
+	tmp.setRawBits((int)((this->n * ref.getRawBits()) >> this->f));
+    return (tmp);
 }
 
-Fixed& Fixed::operator/(const Fixed& ref) {
-    this->n = (*this).toFloat() / ref.n;
-    return *this;
+Fixed Fixed::operator/(const Fixed& ref) {
+	Fixed tmp;
+
+	tmp.setRawBits((int)((this->n / ref.getRawBits()) << this->f));
+    return (tmp);
 }
 
 /*-----------------------------------------INCREMENT OPERATORS-----------------------------------------*/
