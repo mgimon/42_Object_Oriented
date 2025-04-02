@@ -32,10 +32,6 @@ Fixed& Fixed::operator=(const Fixed& ref) {
     return *this;
 }
 
-// No protection needed
-// toFloat used to operate correctly
-// toFloat needs this& to be de-referenced
-
 Fixed Fixed::operator+(const Fixed& ref) {
 	Fixed tmp;
 
