@@ -5,6 +5,14 @@ ClapTrap::ClapTrap(std::string name) {
 	this->_hit_points = 10;
 	this->_energy_points = 10;
 	this->_attack_damage = 0;
+	this->_isPure = true;
+	std::cout << "ClapTrap " << this->_name << " was created" << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string name, std::string silent) {
+	this->_name = name;
+	this->_isPure = true;
+	(void)silent;
 }
 
 ClapTrap::ClapTrap(ClapTrap& ref) {
@@ -12,6 +20,7 @@ ClapTrap::ClapTrap(ClapTrap& ref) {
 	this->_hit_points = ref.getHitPoints();
 	this->_energy_points = ref.getEnergyPoints();
 	this->_attack_damage = ref.getAttackDamage();
+	std::cout << "ClapTrap " << this->_name << " was copied" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator = (ClapTrap& ref) {
@@ -21,12 +30,14 @@ ClapTrap& ClapTrap::operator = (ClapTrap& ref) {
 		this->_hit_points = ref._hit_points;
 		this->_energy_points = ref._energy_points;
 		this->_attack_damage = ref._attack_damage;
+		//std::cout << "ClapTrap " << this->_name << " A/O overloaded" << std::endl;
 	}
 	return (*this);
 }
 
 ClapTrap::~ClapTrap() {
-	//std::cout << "ClapTrap destructor called" << std::endl;
+	if (this->_isPure)
+		std::cout << "ClapTrap " << this->_name << " was destroyed" << std::endl;
 }
 
 /*--------------------------GETTERS & SETTERS-----------------------------*/
