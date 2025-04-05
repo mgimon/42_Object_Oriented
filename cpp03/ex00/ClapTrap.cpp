@@ -66,8 +66,15 @@ void		ClapTrap::setAttackDamage(int const attack_damage) {
 /*--------------------------MEMBER FUNCTIONS-----------------------------*/
 
 void		ClapTrap::attack(const std::string& target) {
-	this->setEnergyPoints(this->getEnergyPoints() - 1);
-	std::cout << this->getName() << " attacked " << target << "!" << std::endl;
+	if (!this->getHitPoints())
+		std::cout << this->getName() << " can't attack: he's dead" << std::endl;
+	if (!this->getEnergyPoints())
+		std::cout << this->getName() << " can't attack: he's got no energy" << std::endl;
+	if (this->getHitPoints() && this->getEnergyPoints())
+	{
+		std::cout << this->getName() << " attacked " << target << "!" << std::endl;
+		this->setEnergyPoints(this->getEnergyPoints() - 1);
+	}
 }
 
 void		ClapTrap::takeDamage(unsigned int amount) {
