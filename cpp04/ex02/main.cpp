@@ -14,7 +14,8 @@ int	main(void)
 	*/
 
 	int	size = 10;
-	const Animal **animals = new const Animal*[size];
+	// these are not Animal objects, this is a pointer to an array allocation
+	Animal **animals = new Animal*[size];
 
 	std::cout << std::endl;
 	std::cout  << "----------------" << std::endl;
@@ -37,6 +38,13 @@ int	main(void)
 	std::cout << std::endl;
 	std::cout  << "----------------" << std::endl;
 	std::cout << std::endl;
+
+	// this wouldn't compile
+	/*Animal *pureAnimal = new Animal();
+
+	std::cout << std::endl;
+	std::cout  << "----------------" << std::endl;
+	std::cout << std::endl;*/
 
 	return (0);
 }
