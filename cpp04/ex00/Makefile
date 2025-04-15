@@ -1,8 +1,8 @@
 NAME = animal
 
-SRCS = main.cpp Animal.cpp Dog.cpp #Cat.cpp
+SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 
-HEADER = Animal.hpp Dog.hpp #Cat.hpp
+HEADER = Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hppp
 
 CC = c++
 RM = rm -f

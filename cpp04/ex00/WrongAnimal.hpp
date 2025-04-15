@@ -1,5 +1,5 @@
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
 #include <iostream>
 #include <fstream>
@@ -15,7 +15,7 @@
 #define CYAN    "\033[36m"
 #define WHITE   "\033[97m"
 
-class Animal {
+class WrongAnimal {
 
 	protected:
 
@@ -23,13 +23,13 @@ class Animal {
 
 	public:
 
-		Animal();
-		Animal(std::string type);
-		Animal(Animal& ref);
-		Animal& operator = (Animal& ref);
-		~Animal();
+		WrongAnimal();
+		WrongAnimal(std::string type);
+		WrongAnimal(WrongAnimal& ref);
+		WrongAnimal& operator = (WrongAnimal& ref);
+		~WrongAnimal();
 
-		virtual void	makeSound() const;
+		void	makeSound() const;
 		void	setType(std::string const type);
 		std::string getType() const;
 
