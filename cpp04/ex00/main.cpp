@@ -19,15 +19,18 @@ int	main(void)
 	std::cout << std::endl;
 	std::cout  << "----------------" << std::endl;
 	std::cout << std::endl;
-	const WrongAnimal* w = new WrongCat();
-	w->makeSound();
+	const WrongAnimal* wa = new WrongCat();
+	wa->makeSound();
+	const WrongCat* wc = new WrongCat();
+	wc->makeSound();
 	std::cout << std::endl;
 	std::cout  << "----------------" << std::endl;
 	std::cout << std::endl;
 
 	delete(j);
 	delete(i);
-	delete(w);
+	delete(wa);
+	delete(wc);
 	delete(meta);
 
 	return (0);

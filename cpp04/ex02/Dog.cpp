@@ -5,6 +5,21 @@ Dog::Dog() : Animal("Dog") {
 	std::cout << "One Dog was created" << std::endl;
 }
 
+// we allocate copy the brain too
+Dog::Dog(Dog& ref) : Animal(ref) {
+	this->brain = new Brain(*ref.brain);
+}
+
+// we allocate copy the brain too
+Dog& Dog::operator = (Dog& ref) {
+    if (this != &ref) {
+        Animal::operator=(ref);
+        delete this->brain;
+        this->brain = new Brain(*ref.brain);
+    }
+    return *this;
+}
+
 Dog::~Dog() {
 	delete(brain);
 	std::cout << "One Dog was destroyed" << std::endl;
