@@ -18,7 +18,7 @@ Brain& Brain::operator = (Brain& ref) {
 }
 
 Brain::~Brain() {
-    std::cout << "A brain was deleted" << std::endl;
+    std::cout << "A brain was destroyed" << std::endl;
 };
 
 void    Brain::setIdeaInIdeas(int const n, std::string const idea) {
