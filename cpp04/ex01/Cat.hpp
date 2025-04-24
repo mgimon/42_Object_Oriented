@@ -17,6 +17,7 @@ class Cat : public Animal {
 		Cat& operator = (Cat& ref);
 		~Cat();
 		void	makeSound() const;
+		Brain*	getBrain() const;
 };
 
 #endif

@@ -22,11 +22,30 @@ int	main(void)
 	
 
 	for (int i = 0; i < size; i++) {
-		if (i < (size / 2))
+		if (i < (size / 2)) {
 			animals[i] = new Dog();
+			((Dog*)animals[i])->getBrain()->setIdeaInIdeas(0, "I'm a dog");
+		}
 		else
+		{
 			animals[i] = new Cat();
+			((Cat*)animals[i])->getBrain()->setIdeaInIdeas(0, "I'm a cat");
+		}
 	}
+
+	for (int i = 0; i < size; i++) {
+		if (i < (size / 2)) {
+			std::cout << "Animal " << i << ": " ;
+			((Dog*)animals[i])->getBrain()->printIdeas();
+		}
+		else {
+			std::cout << "Animal " << i << ": " ;
+			((Cat*)animals[i])->getBrain()->printIdeas();
+		}
+	}
+
+
+
 
 	for (int i = 0; i < size; i++) {
 			delete(animals[i]);
