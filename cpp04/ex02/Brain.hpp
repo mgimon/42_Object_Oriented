@@ -14,6 +14,10 @@ class Brain {
 		Brain(Brain& ref);
 		Brain& operator = (Brain& ref);
 		~Brain();
+
+		void		setIdeaInIdeas(int const n, std::string const idea);
+		std::string	getIdeafromIdeas(int const n) const;
+		void		printIdeas();
 };
 
 #endif
