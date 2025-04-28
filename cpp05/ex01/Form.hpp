@@ -1,10 +1,11 @@
-#ifndef BUREAUCRAT_HPP
-#define BUREAUCRAT_HPP
+#ifndef FORM_HPP
+#define FORM_HPP
 
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <cstdlib>
+#include "Bureaucrat.hpp"
 
 #define RED     "\033[31m"
 #define GRAY    "\033[90m"
@@ -16,30 +17,33 @@
 #define CYAN    "\033[36m"
 #define WHITE   "\033[97m"
 
-class Bureaucrat {
+class Form {
 
 	private:
 
 		const std::string	_name;
-		int					_grade;
+		const int			_sgrade;
+		const int			_egrade;
+		bool				_signed;
 
 	public:
 
 		class GradeTooHighException;
 		class GradeTooLowException;
 
-		Bureaucrat(const std::string& name, int grade);
-		Bureaucrat(const Bureaucrat& ref);
-		Bureaucrat& operator = (const Bureaucrat& ref);
-		~Bureaucrat();
+		Form(const std::string &name, const int &sgrade, const int &egrade);
+		Form(const Form &ref);
+		Form& operator = (const Form &ref);
+		~Form();
 
 		const std::string	getName() const;
-		int					getGrade() const;
-		void				incrementGrade();
-		void				decrementGrade();
-		void				setGrade(const int grade);
+		int					getSignGrade() const;
+		int					getExecGrade() const;
+		bool 				isSigned() const;
+		void				beSigned(const Bureaucrat &ref);
+
 };
 
-std::ostream &operator<<(std::ostream &os, const Bureaucrat& ref);
+std::ostream &operator<<(std::ostream &os, const Form &ref);
 
 #endif

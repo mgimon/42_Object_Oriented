@@ -1,8 +1,8 @@
 NAME = bureaucrat
 
-SRCS = main.cpp Bureaucrat.cpp
+SRCS = main.cpp Bureaucrat.cpp Form.cpp
 
-HEADER = Bureaucrat.hpp
+HEADER = Bureaucrat.hpp Form.hpp
 
 CC = c++
 RM = rm -f

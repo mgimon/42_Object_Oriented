@@ -28,11 +28,11 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name), _grade
 			throw GradeTooLowException();
 	}
 	catch (const GradeTooHighException& e) {
-		std::cerr << RED << e.what() << " grade must be within range!" << RESET << std::endl;
+		std::cerr << RED << e.what() << " bureaucrat grade must be within range!" << RESET << std::endl;
 		exit(1);
 	}
 	catch (const GradeTooLowException& e) {
-		std::cerr << RED << e.what() << " grade must be within range!" << RESET << std::endl;
+		std::cerr << RED << e.what() << " bureaucrat grade must be within range!" << RESET << std::endl;
 		exit(1);
 	}
 	std::cout << GRAY << "Creating a Bureaucrat..." << RESET << std::endl;
