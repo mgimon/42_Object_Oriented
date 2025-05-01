@@ -5,7 +5,7 @@
 #include <fstream>
 #include <string>
 #include <cstdlib>
-#include "Form.hpp"
+#include "AForm.hpp"
 
 #define RED     "\033[31m"
 #define GRAY    "\033[90m"
@@ -17,7 +17,7 @@
 #define CYAN    "\033[36m"
 #define WHITE   "\033[97m"
 
-class Form;
+class AForm;
 
 class Bureaucrat {
 
@@ -41,7 +41,7 @@ class Bureaucrat {
 		void				incrementGrade();
 		void				decrementGrade();
 		void				setGrade(const int grade);
-		void				signForm(Form &ref);
+		void				signForm(AForm &ref);
 };
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat& ref);

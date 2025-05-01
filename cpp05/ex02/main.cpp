@@ -1,12 +1,12 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 int main(void)
 {
 	//Bureaucrat b("Rob", 0);
 	Bureaucrat	b0("Bobbert", 101);
 	Bureaucrat	b1("Mr Robert", 1);
-	Form		f0("miFormulario", 100, 100);
+	AForm		f0("miFormulario", 100, 100);
 
 	std::cout << std::endl;
 	std::cout << std::endl;

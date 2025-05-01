@@ -1,15 +1,15 @@
-#include "Form.hpp"
+#include "AForm.hpp"
 
 // *** MEMBER CLASSES *** //
 
-class Form::GradeTooHighException : public std::exception {
+class AForm::GradeTooHighException : public std::exception {
 	public:
 		const char* what() const throw() {
 			return ("GradeTooHighException: ");
 		}
 };
 
-class Form::GradeTooLowException : public std::exception {
+class AForm::GradeTooLowException : public std::exception {
 	public:
 		const char* what() const throw() {
 			return ("GradeTooLowException: ");
@@ -18,7 +18,7 @@ class Form::GradeTooLowException : public std::exception {
 
 // *** CANONICAL *** //
 
-Form::Form(const std::string &name, const int &sgrade, const int &egrade) : _name(name), _sgrade(sgrade), _egrade(egrade) {
+AForm::AForm(const std::string &name, const int &sgrade, const int &egrade) : _name(name), _sgrade(sgrade), _egrade(egrade) {
 	try {
 		if (_sgrade < 1 || _egrade < 1) 
 			throw GradeTooHighException();
@@ -33,52 +33,52 @@ Form::Form(const std::string &name, const int &sgrade, const int &egrade) : _nam
 		std::cerr << RED << e.what() << " form grade must be within range!" << RESET << std::endl;
 		exit(1);
 	}
-	std::cout << GRAY << "Creating a Form..." << RESET << std::endl;
+	std::cout << GRAY << "Creating a AForm..." << RESET << std::endl;
 	this->_signed = false;
 }
 
-Form::Form(const Form &ref) : _name(ref._name), _sgrade(ref._sgrade), _egrade(ref._egrade) {
-	std::cout << GRAY << "Copying a Form..." << RESET << std::endl;
+AForm::AForm(const AForm &ref) : _name(ref._name), _sgrade(ref._sgrade), _egrade(ref._egrade) {
+	std::cout << GRAY << "Copying a AForm..." << RESET << std::endl;
 	this->_signed = ref._signed;
 }
 
-Form& Form::operator = (const Form &ref) {
+AForm& AForm::operator = (const AForm &ref) {
 	if (this != &ref)
 		this->_signed = ref._signed;
-	std::cout << GRAY << "Assigning a Form..." << RESET << std::endl;
+	std::cout << GRAY << "Assigning a AForm..." << RESET << std::endl;
 	return (*this);
 }
 
-Form::~Form() {
-	std::cout << GRAY << "Destroying a Form..." << RESET << std::endl;
+AForm::~AForm() {
+	std::cout << GRAY << "Destroying a AForm..." << RESET << std::endl;
 }
 
 // *** OPERATORS *** //
 
-std::ostream& operator<<(std::ostream& os, const Form &ref ) {
+std::ostream& operator<<(std::ostream& os, const AForm &ref ) {
     os << ref.getName() << ", " << (ref.isSigned() ? "signed" : "unsigned") << " form sign grade " << ref.getSignGrade() << ", execute grade " << ref.getExecGrade();
     return os;
 }
 
 // *** METHODS *** //
 
-const std::string	Form::getName() const {
+const std::string	AForm::getName() const {
 	return (this->_name);
 }
 
-int	Form::getSignGrade() const {
+int	AForm::getSignGrade() const {
 	return (this->_sgrade);
 }
 
-int	Form::getExecGrade() const {
+int	AForm::getExecGrade() const {
 	return (this->_egrade);
 }
 
-bool Form::isSigned() const {
+bool AForm::isSigned() const {
 	return this->_signed;
 }
 
-int Form::beSigned(const Bureaucrat &ref) {
+int AForm::beSigned(const Bureaucrat &ref) {
 	try {
 		if (this->getSignGrade() < ref.getGrade())
 			throw (GradeTooLowException());
@@ -93,3 +93,7 @@ int Form::beSigned(const Bureaucrat &ref) {
 		return (0);
 	}
 }
+
+void		AForm::execute(const Bureaucrat &ref) const {
+	(void)ref;
+};

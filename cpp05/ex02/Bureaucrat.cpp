@@ -101,7 +101,7 @@ void	Bureaucrat::setGrade(const int grade) {
 	this->_grade = grade;
 }
 
-void	Bureaucrat::signForm(Form &ref) {
+void	Bureaucrat::signForm(AForm &ref) {
 	int success;
 
 	success = 0;
