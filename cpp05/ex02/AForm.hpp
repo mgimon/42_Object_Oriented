@@ -1,5 +1,5 @@
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef AFORM_HPP
+#define AFORM_HPP
 
 #include <iostream>
 #include <fstream>
@@ -30,8 +30,24 @@ class AForm {
 
 	public:
 
-		class GradeTooHighException;
-		class GradeTooLowException;
+		class GradeTooHighException : public std::exception {
+			public:
+				const char* what() const throw() {
+					return ("GradeTooHighException: ");
+				}
+		};
+		class GradeTooLowException : public std::exception {
+			public:
+				const char* what() const throw() {
+					return ("GradeTooLowException: ");
+				}
+		};
+		class FormNotValidException : public std::exception {
+			public:
+				const char* what() const throw() {
+					return ("FormNotValidException: ");
+				}
+		};
 
 		AForm(const std::string &name, const int &sgrade, const int &egrade);
 		AForm(const AForm &ref);
@@ -43,6 +59,7 @@ class AForm {
 		int					getExecGrade() const;
 		bool 				isSigned() const;
 		int					beSigned(const Bureaucrat &ref);
+
 		virtual	void		execute(const Bureaucrat &ref) const = 0;
 
 };

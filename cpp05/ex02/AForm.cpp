@@ -1,21 +1,5 @@
 #include "AForm.hpp"
 
-// *** MEMBER CLASSES *** //
-
-class AForm::GradeTooHighException : public std::exception {
-	public:
-		const char* what() const throw() {
-			return ("GradeTooHighException: ");
-		}
-};
-
-class AForm::GradeTooLowException : public std::exception {
-	public:
-		const char* what() const throw() {
-			return ("GradeTooLowException: ");
-		}
-};
-
 // *** CANONICAL *** //
 
 AForm::AForm(const std::string &name, const int &sgrade, const int &egrade) : _name(name), _sgrade(sgrade), _egrade(egrade) {
