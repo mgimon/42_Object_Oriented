@@ -10,7 +10,7 @@ class RobotomyRequestForm : public AForm {
         RobotomyRequestForm& operator = (const RobotomyRequestForm &ref);
         ~RobotomyRequestForm();
 
-        void    execute(Bureaucrat const &executor) const;
+        int    execute(Bureaucrat const &executor) const;
 };
 
 #endif

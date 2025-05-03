@@ -111,3 +111,12 @@ void	Bureaucrat::signForm(AForm &ref) {
 	else
 		std::cout << RED << this->getName() << " couldn't sign " << ref.getName() << " because their grade ranges don't match" << RESET << std::endl;
 }
+
+void	Bureaucrat::executeForm(AForm const &ref) const {
+	int success = ref.execute(*this);
+
+	if (success == 0)
+		std::cout << GREEN << this->getName() << " executed " <<  ref.getName() << RESET << std::endl;
+	else
+		std::cout << RED << this->getName() << " couldn't execute " <<  ref.getName() << RESET << std::endl;
+}

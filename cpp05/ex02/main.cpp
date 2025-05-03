@@ -15,9 +15,9 @@ int main(void)
     PresidentialPardonForm pardon("PardonForm");
 
     std::cout << std::endl << "--- Trying to execute without signing ---" << std::endl;
-    shrub.execute(intern);
-    robot.execute(mid);
-    pardon.execute(boss);
+    boss.executeForm(shrub);
+    mid.executeForm(robot);
+    boss.executeForm(pardon);
 
     std::cout << std::endl << "--- Intern tries to sign forms (should fail) ---" << std::endl;
     intern.signForm(shrub);
@@ -30,10 +30,12 @@ int main(void)
     boss.signForm(pardon);
 
     std::cout << std::endl << "--- Executing forms with different bureaucrats ---" << std::endl;
-    shrub.execute(boss);     // should succeed
-    robot.execute(mid);      // may succeed/fail randomly (depending on logic)
-    pardon.execute(mid);     // should fail due to low grade
-    pardon.execute(boss);    // should succeed
+    boss.executeForm(shrub);     // should succeed
+    mid.executeForm(robot);      // should fail unless mid grade <= 45
+    mid.executeForm(pardon);     // should fail unless mid grade <= 5
+    boss.executeForm(pardon);    // should succeed
+
+    std::cout << std::endl;
 
     return 0;
 }

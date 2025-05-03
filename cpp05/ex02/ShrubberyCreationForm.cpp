@@ -20,18 +20,33 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {
 
 
 
-void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
+int ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
+    
+    std::string tree =
+    "   /\\\n"
+    "  /  \\\n"
+    " /____\\\n"
+    "   ||\n";
+    
     try {
         if (!this->isSigned())
             throw(FormNotValidException());
         if (this->getExecGrade() < executor.getGrade())
             throw(GradeTooLowException());
-        std::cout << GREEN << "Executing ShrubberyCreationForm " << this->getName() << RESET << std::endl;
+        
+        std::cout << YELLOW << "~ A file was created ~" << RESET << std::endl;
+        std::ofstream file((this->getName() + "_shrubbery").c_str());
+        for (int i = 0; i < 5; ++i)
+            file << tree << "\n";
+        file.close();
+        return (0);
     }
     catch (const FormNotValidException &e1) {
         std::cerr << RED << e1.what() << " form is not signed!" << RESET << std::endl;
+        return (1);
     }
     catch (const GradeTooLowException &e2) {
         std::cerr << RED << e2.what() << " grade is too low to execute" << RESET << std::endl;
+        return (1);
     }
 };

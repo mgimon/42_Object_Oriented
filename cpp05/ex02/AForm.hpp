@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <fstream>
 #include <cstdlib>
 #include "Bureaucrat.hpp"
 
@@ -60,7 +61,7 @@ class AForm {
 		bool 				isSigned() const;
 		int					beSigned(const Bureaucrat &ref);
 
-		virtual	void		execute(const Bureaucrat &ref) const = 0;
+		virtual	int		execute(const Bureaucrat &ref) const = 0;
 
 };
 

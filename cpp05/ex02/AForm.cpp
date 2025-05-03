@@ -78,6 +78,7 @@ int AForm::beSigned(const Bureaucrat &ref) {
 	}
 }
 
-void		AForm::execute(const Bureaucrat &ref) const {
+int		AForm::execute(const Bureaucrat &ref) const {
 	(void)ref;
+	return (0);
 };
