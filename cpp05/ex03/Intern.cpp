@@ -40,6 +40,9 @@ AForm* Intern::makeForm(std::string name, std::string target) {
     myMap["shrubbery creation"] = &Intern::createShrubberyCreationForm;
     myMap["presidential pardon"] = &Intern::createPresidentialPardonForm;
 
+    // (this->*mymap[name])(target);
+    // =
+    // &Intern::createRobotomyRequestForm(target);
     if (myMap.find(name) != myMap.end()) {
         return (this->*myMap[name])(target);
     }
