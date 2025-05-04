@@ -5,6 +5,7 @@
 #include <fstream>
 #include <string>
 #include <cstdlib>
+#include <climits>
 
 #define RED     "\033[31m"
 #define GRAY    "\033[90m"
