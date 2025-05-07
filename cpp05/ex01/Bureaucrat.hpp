@@ -31,6 +31,7 @@ class Bureaucrat {
 		class GradeTooHighException;
 		class GradeTooLowException;
 
+		Bureaucrat();
 		Bureaucrat(const std::string& name, int grade);
 		Bureaucrat(const Bureaucrat& ref);
 		Bureaucrat& operator = (const Bureaucrat& ref);

@@ -5,34 +5,28 @@
 class Form::GradeTooHighException : public std::exception {
 	public:
 		const char* what() const throw() {
-			return ("GradeTooHighException: ");
+			return ("GradeTooHighException: grade is too high!");
 		}
 };
 
 class Form::GradeTooLowException : public std::exception {
 	public:
 		const char* what() const throw() {
-			return ("GradeTooLowException: ");
+			return ("GradeTooHighException: grade is too low!");
 		}
 };
 
 // *** CANONICAL *** //
 
+Form::Form() : _name(" "), _sgrade(150), _egrade(150), _signed(false) {
+	std::cout << GRAY << "Creating a Form..." << RESET << std::endl;
+}
+
 Form::Form(const std::string &name, const int &sgrade, const int &egrade) : _name(name), _sgrade(sgrade), _egrade(egrade) {
-	try {
-		if (_sgrade < 1 || _egrade < 1) 
-			throw GradeTooHighException();
-		if (_sgrade > 150 || _egrade > 150) 
-			throw GradeTooLowException();
-	}
-	catch (const GradeTooHighException& e) {
-		std::cerr << RED << e.what() << " form grade must be within range!" << RESET << std::endl;
-		exit(1);
-	}
-	catch (const GradeTooLowException& e) {
-		std::cerr << RED << e.what() << " form grade must be within range!" << RESET << std::endl;
-		exit(1);
-	}
+	if (_sgrade < 1 || _egrade < 1) 
+		throw GradeTooHighException();
+	if (_sgrade > 150 || _egrade > 150) 
+		throw GradeTooLowException();
 	std::cout << GRAY << "Creating a Form..." << RESET << std::endl;
 	this->_signed = false;
 }
@@ -78,18 +72,9 @@ bool Form::isSigned() const {
 	return this->_signed;
 }
 
-int Form::beSigned(const Bureaucrat &ref) {
-	try {
-		if (this->getSignGrade() < ref.getGrade())
-			throw (GradeTooLowException());
-		else
-		{
-			this->_signed = true;
-			return (1);
-		}
-	}
-	catch (const GradeTooLowException& e) {
-		std::cerr << RED << e.what() << " form can't be signed" << RESET << std::endl;
-		return (0);
-	}
+void Form::beSigned(const Bureaucrat &ref) {
+	if (this->getSignGrade() < ref.getGrade())
+		throw (GradeTooLowException());
+	else
+		this->_signed = true;
 }

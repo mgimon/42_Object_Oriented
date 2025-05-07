@@ -33,6 +33,7 @@ class Form {
 		class GradeTooHighException;
 		class GradeTooLowException;
 
+		Form();
 		Form(const std::string &name, const int &sgrade, const int &egrade);
 		Form(const Form &ref);
 		Form& operator = (const Form &ref);
@@ -42,7 +43,7 @@ class Form {
 		int					getSignGrade() const;
 		int					getExecGrade() const;
 		bool 				isSigned() const;
-		int					beSigned(const Bureaucrat &ref);
+		void				beSigned(const Bureaucrat &ref);
 
 };
 
