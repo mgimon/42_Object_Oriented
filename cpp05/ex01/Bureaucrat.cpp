@@ -90,11 +90,10 @@ void	Bureaucrat::setGrade(const int grade) {
 void	Bureaucrat::signForm(Form &ref) {
 	try {
 		ref.beSigned(*this);
+		std::cout << GREEN << this->getName() << " signed " << ref.getName() << RESET << std::endl;	
 	}
 	catch (const GradeTooLowException &e)
 	{
 		std::cerr << RED << e.what() << " - couldn't sign form!" << RESET << std::endl;
 	}
-	std::cout << GREEN << this->getName() << " signed " << ref.getName() << RESET << std::endl;
-		
 }

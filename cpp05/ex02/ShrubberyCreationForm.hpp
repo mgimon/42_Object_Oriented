@@ -7,12 +7,17 @@ class ShrubberyCreationForm : public AForm {
         
         public:
 
+        class GradeTooHighException;
+        class GradeTooLowException;
+        class FormNotValidException;
+
+        ShrubberyCreationForm();
         ShrubberyCreationForm(std::string target);
         ShrubberyCreationForm(const ShrubberyCreationForm &ref);
         ShrubberyCreationForm& operator = (const ShrubberyCreationForm &ref);
         ~ShrubberyCreationForm();
 
-        int    execute(Bureaucrat const &executor) const;
+        void    execute(Bureaucrat const &executor) const;
 };
 
 #endif

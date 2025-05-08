@@ -14,6 +14,7 @@ int main(void)
     std::cout << std::endl << "--- Intern tries to create an invalid form ---" << std::endl;
 
     AForm* invalidForm = intern.makeForm("random invalid name", "InvalidForm");
+    boss.signForm(*invalidForm);
     (void)invalidForm;
 
     std::cout << std::endl << "--- Intern tries to create valid forms ---" << std::endl;

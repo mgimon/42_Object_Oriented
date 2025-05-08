@@ -5,12 +5,18 @@
 
 class RobotomyRequestForm : public AForm {
     public:
+
+        class GradeTooHighException;
+        class GradeTooLowException;
+        class FormNotValidException;
+
+        RobotomyRequestForm();
         RobotomyRequestForm(std::string target);
         RobotomyRequestForm(const RobotomyRequestForm &ref);
         RobotomyRequestForm& operator = (const RobotomyRequestForm &ref);
         ~RobotomyRequestForm();
 
-        int    execute(Bureaucrat const &executor) const;
+        void    execute(Bureaucrat const &executor) const;
 };
 
 #endif

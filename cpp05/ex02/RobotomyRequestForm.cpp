@@ -1,5 +1,28 @@
 #include "RobotomyRequestForm.hpp"
 
+class RobotomyRequestForm::GradeTooHighException : public std::exception {
+	public:
+		const char* what() const throw() {
+			return ("GradeTooHighException: ");
+		}
+};
+class RobotomyRequestForm::GradeTooLowException : public std::exception {
+	public:
+		const char* what() const throw() {
+			return ("GradeTooLowException: ");
+		}
+};
+class RobotomyRequestForm::FormNotValidException : public std::exception {
+	public:
+		const char* what() const throw() {
+			return ("FormNotValidException: ");
+		}
+};
+
+RobotomyRequestForm::RobotomyRequestForm() : AForm() {
+    std::cout << GRAY << "Creating a RobotomyRequestForm..." << RESET << std::endl;
+}
+
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm(target, 72, 45) {
     std::cout << GRAY << "Creating a RobotomyRequestForm..." << RESET << std::endl;
 };
@@ -20,8 +43,7 @@ RobotomyRequestForm::~RobotomyRequestForm() {
 
 
 
-int RobotomyRequestForm::execute(Bureaucrat const &executor) const {
-    try {
+void RobotomyRequestForm::execute(Bureaucrat const &executor) const {
         if (!this->isSigned())
             throw(FormNotValidException());
         if (this->getExecGrade() < executor.getGrade())
@@ -32,14 +54,4 @@ int RobotomyRequestForm::execute(Bureaucrat const &executor) const {
             std::cout << this->getName() << " has been robotomized ~" << RESET << std::endl;
         else
             std::cout << "Robotomization has failed ~" << RESET << std::endl;
-        return (0);
-    }
-    catch (const FormNotValidException &e1) {
-        std::cerr << RED << e1.what() << " form is not signed!" << RESET << std::endl;
-        return (1);
-    }
-    catch (const GradeTooLowException &e2) {
-        std::cerr << RED << e2.what() << " grade is too low to execute" << RESET << std::endl;
-        return (1);
-    }
 };

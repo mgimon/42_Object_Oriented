@@ -4,7 +4,6 @@
 int main(void)
 {
 	try {
-	//Bureaucrat b("Rob", 0);
 	Bureaucrat	b0("Bobbert", 100);
 	Bureaucrat	b1("Mr Robert", 1);
 	Form		f0("miFormulario", 100, 100);
@@ -19,6 +18,7 @@ int main(void)
 	std::cout << f0 << std::endl;
 	b1.signForm(f0);
 	std::cout << f0 << std::endl;
+
 
 	std::cout << std::endl;
 	std::cout << std::endl;

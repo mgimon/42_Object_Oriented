@@ -17,24 +17,25 @@ class Bureaucrat::GradeTooLowException : public std::exception {
 		}
 };
 
+class Bureaucrat::FormNotValidException : public std::exception {
+	public:
+		const char* what() const throw() {
+			return ("FormNotValidException: ");
+		}
+};
+
 
 // *** CANONICAL *** //
 
+Bureaucrat::Bureaucrat() : _name(" "), _grade(150) {
+	std::cout << GRAY << "Creating a Bureaucrat..." << RESET << std::endl;
+}
+
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name), _grade(grade) {
-	try {
-		if (_grade < 1) 
-			throw GradeTooHighException();
-		if (_grade > 150) 
-			throw GradeTooLowException();
-	}
-	catch (const GradeTooHighException& e) {
-		std::cerr << RED << e.what() << " bureaucrat grade must be within range!" << RESET << std::endl;
-		exit(1);
-	}
-	catch (const GradeTooLowException& e) {
-		std::cerr << RED << e.what() << " bureaucrat grade must be within range!" << RESET << std::endl;
-		exit(1);
-	}
+	if (_grade < 1) 
+		throw GradeTooHighException();
+	if (_grade > 150) 
+		throw GradeTooLowException();
 	std::cout << GRAY << "Creating a Bureaucrat..." << RESET << std::endl;
 }
 
@@ -67,56 +68,48 @@ const std::string	Bureaucrat::getName() const {
 	return (this->_name);
 }
 
-int					Bureaucrat::getGrade() const {
+int		Bureaucrat::getGrade() const {
 	return (this->_grade);
 }
 
 void	Bureaucrat::incrementGrade() {
-	try
-	{
-		if (this->_grade <= 1)
-			throw GradeTooHighException();
-		else
-			this->_grade--;
-	}
-	catch (const GradeTooHighException& e) {
-		std::cerr << RED << e.what() << this->getName() << " already has the maximum grade!" << RESET << std::endl;
-	}
+	if (this->_grade <= 1)
+		throw GradeTooHighException();
+	else
+		this->_grade--;
 }
 
 void	Bureaucrat::decrementGrade() {
-	try
-	{
-		if (this->_grade >= 150)
-			throw GradeTooLowException();
-		else
-			this->_grade++;
-	}
-	catch (const GradeTooLowException& e) {
-		std::cerr << RED << e.what() << this->getName() << " already has the minimum grade!" << RESET << std::endl;
-	}
+	if (this->_grade >= 150)
+		throw GradeTooLowException();
+	else
+		this->_grade++;
 }
 
 void	Bureaucrat::setGrade(const int grade) {
+	if (grade < 1)
+		throw GradeTooHighException();
+	if (grade > 150)
+		throw GradeTooLowException();
 	this->_grade = grade;
 }
 
 void	Bureaucrat::signForm(AForm &ref) {
-	int success;
-
-	success = 0;
-	success = ref.beSigned(*this);
-	if (success)
-		std::cout << GREEN << this->getName() << " signed " << ref.getName() << RESET << std::endl;
-	else
-		std::cout << RED << this->getName() << " couldn't sign " << ref.getName() << " because their grade ranges don't match" << RESET << std::endl;
+	try {
+		ref.beSigned(*this);
+		std::cout << GREEN << this->getName() << " signed " << ref.getName() << RESET << std::endl;	
+	}
+	catch (const std::exception &e) {
+		std::cout << RED << "Execution failed: " << e.what() << RESET << std::endl;
+	}
 }
 
 void	Bureaucrat::executeForm(AForm const &ref) const {
-	int success = ref.execute(*this);
-
-	if (success == 0)
+	try {
+		ref.execute(*this);
 		std::cout << GREEN << this->getName() << " executed " <<  ref.getName() << RESET << std::endl;
-	else
-		std::cout << RED << this->getName() << " couldn't execute " <<  ref.getName() << RESET << std::endl;
+	}
+	catch (const std::exception &e) {
+		std::cout << RED << "Execution failed: " << e.what() << RESET << std::endl;
+	}
 }

@@ -31,25 +31,11 @@ class AForm {
 
 	public:
 
-		class GradeTooHighException : public std::exception {
-			public:
-				const char* what() const throw() {
-					return ("GradeTooHighException: ");
-				}
-		};
-		class GradeTooLowException : public std::exception {
-			public:
-				const char* what() const throw() {
-					return ("GradeTooLowException: ");
-				}
-		};
-		class FormNotValidException : public std::exception {
-			public:
-				const char* what() const throw() {
-					return ("FormNotValidException: ");
-				}
-		};
+		class GradeTooHighException;
+		class GradeTooLowException;
+		class FormNotValidException;
 
+		AForm();
 		AForm(const std::string &name, const int &sgrade, const int &egrade);
 		AForm(const AForm &ref);
 		AForm& operator = (const AForm &ref);
@@ -59,9 +45,9 @@ class AForm {
 		int					getSignGrade() const;
 		int					getExecGrade() const;
 		bool 				isSigned() const;
-		int					beSigned(const Bureaucrat &ref);
+		void				beSigned(const Bureaucrat &ref);
 
-		virtual	int		execute(const Bureaucrat &ref) const = 0;
+		virtual	void		execute(const Bureaucrat &ref) const = 0;
 
 };
 
