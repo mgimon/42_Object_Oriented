@@ -11,12 +11,8 @@
 
 class Intern {
 	public:
-		class InternCantMakeFormException : public std::exception {
-			public:
-				const char* what() const throw() {
-					return ("InternCannotFindFormException: ");
-				}
-		};
+		
+		class InternCantMakeFormException;
 
 		Intern();
 		Intern(const Intern &ref);

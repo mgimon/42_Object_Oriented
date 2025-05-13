@@ -1,5 +1,12 @@
 #include "Intern.hpp"
 
+class Intern::InternCantMakeFormException : public std::exception {
+			public:
+				const char* what() const throw() {
+					return ("InternCannotFindFormException ");
+				}
+};
+
 Intern::Intern() {
 	std::cout << GRAY << "Creating an Intern..." << RESET << std::endl;
 };
