@@ -1,46 +1,49 @@
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
-#include "Intern.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
+#include "Intern.hpp"
+
 int main(void)
 {
-    Bureaucrat  boss("Alice", 1);
-    Bureaucrat  mid("Charlie", 50);
-    Intern      intern;
+    Bureaucrat boss("Alice", 1);
+    Bureaucrat mid("Charlie", 45);
+    Intern intern;
 
-    std::cout << std::endl << "--- Intern tries to create an invalid form ---" << std::endl;
+    AForm *shrub; // empty pointer to Abstract
+    AForm *robot; // empty pointer to Abstract
+    AForm *pardon; // empty pointer to Abstract
+    //AForm *iWillFail; // empty pointer to Abstract
 
-    AForm* invalidForm = intern.makeForm("random invalid name", "InvalidForm");
-    boss.signForm(*invalidForm);
-    (void)invalidForm;
+    std::cout << std::endl << "--- Intern creates forms ---" << std::endl;
+    shrub = intern.makeForm("shrubbery creation", "shrub");
+    robot = intern.makeForm("robotomy request", "robot");
+    pardon = intern.makeForm("presidential pardon", "pardon");
+    //iWillFail = intern.makeForm("random name", "failure");
 
-    std::cout << std::endl << "--- Intern tries to create valid forms ---" << std::endl;
-
-    AForm* shrubForm = intern.makeForm("shrubbery creation", "ShrubForm");
-    AForm* robotForm = intern.makeForm("robotomy request", "RobotForm");
-    AForm* pardonForm = intern.makeForm("presidential pardon", "PardonForm");
+    std::cout << std::endl << "--- Trying to execute without signing ---" << std::endl;
+    boss.executeForm(*shrub);
+    mid.executeForm(*robot);
+    boss.executeForm(*pardon);
 
     std::cout << std::endl << "--- Boss signs all forms ---" << std::endl;
-
-    boss.signForm(*shrubForm);
-    boss.signForm(*robotForm);
-    boss.signForm(*pardonForm);
+    boss.signForm(*shrub);
+    boss.signForm(*robot);
+    boss.signForm(*pardon);
 
     std::cout << std::endl << "--- Executing forms with different bureaucrats ---" << std::endl;
+    boss.executeForm(*shrub);     // should succeed
+    mid.executeForm(*robot);      // should succeed unless mid bigger than 45
+    mid.executeForm(*pardon);     // should fail unless mid grade smaller than 5
+    boss.executeForm(*pardon);    // should succeed
 
-    boss.executeForm(*shrubForm);    // should succeed
-    mid.executeForm(*robotForm);     // should fail unless mid's grade <= 45
-    mid.executeForm(*pardonForm);    // should fail unless mid's grade <= 5
-    boss.executeForm(*pardonForm);   // should succeed
+    delete(shrub);
+    delete(robot);
+    delete(pardon);
 
     std::cout << std::endl;
 
-    delete shrubForm;
-    delete robotForm;
-    delete pardonForm;
-
-    return 0;
+    return (0);
 }

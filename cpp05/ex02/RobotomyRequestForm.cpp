@@ -3,19 +3,19 @@
 class RobotomyRequestForm::GradeTooHighException : public std::exception {
 	public:
 		const char* what() const throw() {
-			return ("GradeTooHighException: ");
+			return ("GradeTooHighException ");
 		}
 };
 class RobotomyRequestForm::GradeTooLowException : public std::exception {
 	public:
 		const char* what() const throw() {
-			return ("GradeTooLowException: ");
+			return ("GradeTooLowException ");
 		}
 };
 class RobotomyRequestForm::FormNotValidException : public std::exception {
 	public:
 		const char* what() const throw() {
-			return ("FormNotValidException: ");
+			return ("FormNotValidException ");
 		}
 };
 

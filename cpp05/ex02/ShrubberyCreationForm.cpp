@@ -4,19 +4,19 @@
 class ShrubberyCreationForm::GradeTooHighException : public std::exception {
 	public:
 		const char* what() const throw() {
-			return ("GradeTooHighException: ");
+			return ("GradeTooHighException ");
 		}
 };
 class ShrubberyCreationForm::GradeTooLowException : public std::exception {
 	public:
 		const char* what() const throw() {
-			return ("GradeTooLowException: ");
+			return ("GradeTooLowException ");
 		}
 };
 class ShrubberyCreationForm::FormNotValidException : public std::exception {
 	public:
 		const char* what() const throw() {
-			return ("FormNotValidException: ");
+			return ("FormNotValidException ");
 		}
 };
 

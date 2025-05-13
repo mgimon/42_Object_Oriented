@@ -10,7 +10,7 @@ int main(void)
         b0 = b1;
         std::cout << b0 << std::endl;
         std::cout << b1 << std::endl;
-		//b1.incrementGrade();
+		b1.incrementGrade();
 		b0.decrementGrade();
 		b1.setGrade(150);
 		b1.decrementGrade();

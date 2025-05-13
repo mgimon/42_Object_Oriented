@@ -3,19 +3,19 @@
 class PresidentialPardonForm::GradeTooHighException : public std::exception {
 	public:
 		const char* what() const throw() {
-			return ("GradeTooHighException: ");
+			return ("GradeTooHighException ");
 		}
 };
 class PresidentialPardonForm::GradeTooLowException : public std::exception {
 	public:
 		const char* what() const throw() {
-			return ("GradeTooLowException: ");
+			return ("GradeTooLowException ");
 		}
 };
 class PresidentialPardonForm::FormNotValidException : public std::exception {
 	public:
 		const char* what() const throw() {
-			return ("FormNotValidException: ");
+			return ("FormNotValidException ");
 		}
 };
 

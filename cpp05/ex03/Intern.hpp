@@ -2,6 +2,7 @@
 #define INTERN_HPP
 
 #include <functional>
+#include <map>
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"

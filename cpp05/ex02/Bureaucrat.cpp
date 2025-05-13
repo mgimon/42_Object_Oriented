@@ -6,21 +6,21 @@
 class Bureaucrat::GradeTooHighException : public std::exception {
 	public:
 		const char* what() const throw() {
-			return ("GradeTooHighException: ");
+			return ("GradeTooHighException ");
 		}
 };
 
 class Bureaucrat::GradeTooLowException : public std::exception {
 	public:
 		const char* what() const throw() {
-			return ("GradeTooLowException: ");
+			return ("GradeTooLowException ");
 		}
 };
 
 class Bureaucrat::FormNotValidException : public std::exception {
 	public:
 		const char* what() const throw() {
-			return ("FormNotValidException: ");
+			return ("FormNotValidException ");
 		}
 };
 

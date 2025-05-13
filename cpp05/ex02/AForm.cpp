@@ -3,19 +3,19 @@
 class AForm::GradeTooHighException : public std::exception {
 	public:
 		const char* what() const throw() {
-			return ("GradeTooHighException: ");
+			return ("GradeTooHighException ");
 		}
 };
 class AForm::GradeTooLowException : public std::exception {
 	public:
 		const char* what() const throw() {
-			return ("GradeTooLowException: ");
+			return ("GradeTooLowException ");
 		}
 };
 class AForm::FormNotValidException : public std::exception {
 	public:
 		const char* what() const throw() {
-			return ("FormNotValidException: ");
+			return ("FormNotValidException ");
 		}
 };
 

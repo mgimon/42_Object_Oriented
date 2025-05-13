@@ -5,12 +5,18 @@
 
 class PresidentialPardonForm : public AForm {
     public:
+
+        class GradeTooHighException;
+        class GradeTooLowException;
+        class FormNotValidException;
+
+        PresidentialPardonForm();
         PresidentialPardonForm(std::string target);
         PresidentialPardonForm(const PresidentialPardonForm &ref);
         PresidentialPardonForm& operator = (const PresidentialPardonForm &ref);
         ~PresidentialPardonForm();
 
-        int    execute(Bureaucrat const &executor) const;
+        void    execute(Bureaucrat const &executor) const;
 };
 
 #endif

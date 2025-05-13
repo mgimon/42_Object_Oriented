@@ -8,7 +8,7 @@ int main(void)
 {
     Bureaucrat boss("Alice", 1);
     Bureaucrat intern("Bob", 150);
-    Bureaucrat mid("Charlie", 50);
+    Bureaucrat mid("Charlie", 45);
 
     ShrubberyCreationForm shrub("ShrubForm");
     RobotomyRequestForm robot("RobotForm");
@@ -31,11 +31,11 @@ int main(void)
 
     std::cout << std::endl << "--- Executing forms with different bureaucrats ---" << std::endl;
     boss.executeForm(shrub);     // should succeed
-    mid.executeForm(robot);      // should fail unless mid grade <= 45
-    mid.executeForm(pardon);     // should fail unless mid grade <= 5
+    mid.executeForm(robot);      // should succeed unless mid bigger than 45
+    mid.executeForm(pardon);     // should fail unless mid grade smaller than 5
     boss.executeForm(pardon);    // should succeed
 
     std::cout << std::endl;
 
-    return 0;
+    return (0);
 }
