@@ -20,62 +20,54 @@ ScalarConverter::~ScalarConverter() {
 	std::cout << GRAY << "Destroying a converter..." << RESET << std::endl;
 }
 
-/*void		ScalarConverter::convert(std::string parameter) {
-	if (parameter == "0")
-	{
-		std::cout << "char: " << 0 << std::endl;
-		std::cout << "int: " << 0 << std::endl;
-		std::cout << "float: " << "0.0f" << std::endl;
-		std::cout << "double: " << "0.0" << std::endl;
-	}
-	else
-	{
-		std::cout << "char: " << parameter << std::endl;
-		std::cout << "int: " << std::atoi(parameter.c_str()) << std::endl;
-		std::cout << "float: " << static_cast<float>(std::atof(parameter.c_str())) << std::endl;
-		std::cout << "double: " << std::atof(parameter.c_str()) << std::endl;
-	}
-}*/
-
+// TODO : inff, -inff, etc
 
 bool is_nan(double x) {
     return x != x;
 }
 
-void ScalarConverter::convert(std::string parameter) {
-    char *endptr;
+void print_char(bool isValid, double number) {
 
-    // Convertir a double primero (sirve para float también)
-    errno = 0;
-    double dValue = std::strtod(parameter.c_str(), &endptr);
+    std::cout << "char: ";
 
-    // Checkear si la conversión fue válida
-    bool isValid = (errno == 0 && endptr != parameter.c_str());
+    if ((number >= 0 && number <= 31) || number == 127)
+        std::cout << "Non displayable" << std::endl;
 
-    // CHAR
-    if (!isValid || dValue < 0 || dValue > 127 || is_nan(dValue))
-        std::cout << "char: impossible" << std::endl;
+    else if (!isValid || is_nan(number) || number > 127)
+        std::cout << "impossible" << std::endl;
+
     else
-        std::cout << "char: '" << static_cast<char>(dValue) << "'" << std::endl;
+        std::cout << "'" << static_cast<char>(number) << "'" << std::endl;
+}
 
-    // INT
-    if (!isValid || dValue < INT_MIN || dValue > INT_MAX || is_nan(dValue))
+void print_int(bool isValid, double number) {
+
+    if (!isValid || number < INT_MIN || number > INT_MAX || is_nan(number))
         std::cout << "int: impossible" << std::endl;
-    else
-        std::cout << "int: " << static_cast<int>(dValue) << std::endl;
 
-    // FLOAT
-    std::cout << "float: " << static_cast<float>(dValue);
-    if (dValue == static_cast<int>(dValue) && dValue < 1e6 && dValue > -1e6)
-        std::cout << ".0f" << std::endl;  // No .0 si en notación científica
     else
-        std::cout << "f" << std::endl;
+        std::cout << "int: " << static_cast<int>(number) << std::endl;
+}
 
-    // DOUBLE
-    std::cout << "double: " << dValue;
-    if (dValue == static_cast<int>(dValue) && dValue < 1e6 && dValue > -1e6)
-        std::cout << ".0" << std::endl;  // No .0 si en notación científica
-    else
-        std::cout << std::endl;
+void ScalarConverter::convert(std::string parameter) {
+    
+    errno       = 0;
+    char        *endptr;
+
+    const char  *str = parameter.c_str();
+    double      number = std::strtod(str, &endptr);
+    bool        isValid = (errno == 0 && endptr != str);
+
+    print_char(isValid, number);
+    print_int(isValid, number);
+
+
+    double  intpart;
+    bool    isInteger = (std::modf(number, &intpart) == 0);
+
+
+    // number is always valid since it's already a double. this is just printing style:
+    std::cout << "float: " << std::fixed << std::setprecision(isInteger? 1 : 4) << static_cast<float>(number) << "f" << std::endl;
+    std::cout << "double: " << std::fixed << std::setprecision(isInteger? 1 : 4) << number << std::endl;
 }
 
