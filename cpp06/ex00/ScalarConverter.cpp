@@ -20,8 +20,7 @@ ScalarConverter::~ScalarConverter() {
 	std::cout << GRAY << "Destroying a converter..." << RESET << std::endl;
 }
 
-// TODO : inff, -inff, etc
-
+// handles special value NaN
 bool is_nan(double x) {
     return x != x;
 }
@@ -33,7 +32,7 @@ void print_char(bool isValid, double number) {
     if ((number >= 0 && number <= 31) || number == 127)
         std::cout << "Non displayable" << std::endl;
 
-    else if (!isValid || is_nan(number) || number > 127)
+    else if (!isValid || is_nan(number) || number > 127 || std::isinf(number))
         std::cout << "impossible" << std::endl;
 
     else
@@ -51,10 +50,10 @@ void print_int(bool isValid, double number) {
 
 void ScalarConverter::convert(std::string parameter) {
     
-    errno       = 0;
     char        *endptr;
-
     const char  *str = parameter.c_str();
+    // errno will control overflows. std::strtod handles and converts infinites.
+    errno       = 0;
     double      number = std::strtod(str, &endptr);
     bool        isValid = (errno == 0 && endptr != str);
 
@@ -65,8 +64,7 @@ void ScalarConverter::convert(std::string parameter) {
     double  intpart;
     bool    isInteger = (std::modf(number, &intpart) == 0);
 
-
-    // number is always valid since it's already a double. this is just printing style:
+    // number is already valid since it's already a double. this is just printing style.
     std::cout << "float: " << std::fixed << std::setprecision(isInteger? 1 : 4) << static_cast<float>(number) << "f" << std::endl;
     std::cout << "double: " << std::fixed << std::setprecision(isInteger? 1 : 4) << number << std::endl;
 }
