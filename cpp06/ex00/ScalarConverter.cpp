@@ -63,7 +63,6 @@ void ScalarConverter::convert(std::string parameter) {
     double  intpart;
     bool    isInteger = (std::modf(number, &intpart) == 0); // gets % module
 
-    // number is already valid since it's already a double. this is just printing style.
     std::cout << "float: " << std::fixed << std::setprecision(isInteger? 1 : 4) << static_cast<float>(number) << "f" << std::endl;
     std::cout << "double: " << std::fixed << std::setprecision(isInteger? 1 : 4) << number << std::endl;
 }
