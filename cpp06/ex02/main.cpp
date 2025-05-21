@@ -34,7 +34,7 @@ void identify(Base& p) {
 		std::cout << "Object type: " << GREEN << "A" << RESET << std::endl;
 		return ;
 	} catch (const std::exception& e) {
-		//std::cout << e.what() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 
 	try {
@@ -42,7 +42,7 @@ void identify(Base& p) {
 		std::cout << "Object type: " << GREEN << "B" << RESET << std::endl;
 		return ;
 	} catch (const std::exception& e) {
-		//std::cout << e.what() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 
 	try {
@@ -50,7 +50,7 @@ void identify(Base& p) {
 		std::cout << "Object type: " << GREEN << "C" << RESET << std::endl;
 		return ;
 	} catch (const std::exception& e) {
-		//std::cout << e.what() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 }
 
