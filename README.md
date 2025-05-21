@@ -17,23 +17,25 @@ Check them out!
     <tr>
      <td colspan="2" align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp01">Cpp01</a></td>
     </tr>
+    <tr>
+     <td colspan="2" align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp02">Cpp02</a></td>
+    </tr>
+    <tr>
+     <td colspan="2" align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp03">Cpp03</a></td>
+    </tr>
+    <tr>
+     <td colspan="2" align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp04">Cpp04</a></td>
+    </tr>
+    <tr>
+     <td colspan="2" align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp05">Cpp05</a></td>
+    </tr>
+    <tr>
+     <td colspan="2" align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp06">Cpp06</a></td>
+    </tr>
+    <tr>
+     <td colspan="2" align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp07">Cpp07</a></td>
+    </tr>
     
-   <!-- <tr>
-      <td><a href="https://github.com/mgimon/42repo/tree/master/philosophers">Philosophers</a></td>
-      <td><a href="https://github.com/mgimon/42repo/tree/master/cub3d">Cub3d</a></td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/mgimon/42repo/tree/master/fractol">Fractol</a></td>
-      <td><a href="https://github.com/mgimon/42repo/tree/master/pipex">Pipex</a></td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/mgimon/42repo/tree/master/push_swap">Push_Swap</a></td>
-      <td><a href="https://github.com/mgimon/42repo/tree/master/libft">Libft</a></td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/mgimon/42repo/tree/master/ft_printf">Ft_printf</a></td>
-      <td><a href="https://github.com/mgimon/42repo/tree/master/get_next_line">Get_Next_Line</a></td>
-    </tr> -->
   </table>
 </div>
 <br>
