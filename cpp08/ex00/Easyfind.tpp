@@ -16,4 +16,20 @@ typename T::iterator easyfind(T &object, int n) {
         return (object.end());
 }
 
+template <typename T>
+void printContainer(T &container) {
+
+    typename T::iterator it;
+
+    std::cout << std::endl;
+    std::cout << GRAY << "Your container has these numbers:" << RESET << std::endl;
+    it = container.begin();
+    while (it != container.end())
+    {
+        std::cout << *it << std::endl;
+        ++it;
+    }
+    std::cout << std::endl;
+}
+
 #endif
