@@ -60,6 +60,8 @@ void    search_containers(int number, std::vector<int> &vct, std::deque<int> &de
         }
 }
 
+// Template function must work for all types. Return value is an iterator,
+// which is appropriate to compare with algo ft's (.end(), etc)
 int main()
 {
     std::vector<int> vct;
