@@ -1,41 +1,20 @@
+
 #include "Span.hpp"
 
+// TODO : customize exceptions and create main testing huge ranges
+int main()
+{ 
+	Span sp = Span(10);
 
-int main(void) {
+	sp.addNumber(6);
+	sp.addNumber(3);
+	sp.addNumber(17);
+	sp.addNumber(9);
+	sp.addNumber(11);
 
-    int size = 5;
-    Span<std::vector<int> >      vectorSpan(size);
-    Span<std::deque<int> >       dequeSpan(size);
-    Span<std::list<int> >        listSpan(size);
+	std::cout << sp.shortestSpan() << std::endl;
+	std::cout << sp.longestSpan() << std::endl;
+	sp.printContainer();
 
-
-    try {
-
-        for (int i = 0; i < size; i++)
-        {
-            std::cout << GRAY << "Please input numbers to fill container:" << RESET << std::endl;
-
-            int number = 0;
-            if (std::cin >> number)
-            {
-                vectorSpan.addNumber(number);
-                dequeSpan.addNumber(number);
-                listSpan.addNumber(number);
-            }
-            else
-            {
-                if (std::cin.eof())
-                    return (1);
-                std::cout << RED << "The input is not valid!" << RESET << std::endl;
-                std::cin.clear();
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                return (1);
-            }
-        }
-        ::printContainer(vectorSpan.getContainer());
-    }
-    catch (const std::exception &e) {
-        std::cout << RED << e.what() << ": not enough numbers for span" << RESET << std::endl;
-    }
-    return (0);
-}
+	return 0;
+ }
