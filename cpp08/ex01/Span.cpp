@@ -1,6 +1,22 @@
 
 #include "Span.hpp"
 
+// ** CUSTOM EXCEPTIONS ** //
+class Span::ContainerCantTakeN : public std::exception {
+	public:
+		const char* what() const throw() {
+			return ("Container cant take the number(s)!");
+		}
+};
+
+class Span::ContainerInsufficient : public std::exception {
+	public:
+		const char* what() const throw() {
+			return ("Container numbers are not sufficient!");
+		}
+};
+
+
 // ** CANONICAL ** //
 
 Span::Span() : _N(0), _container() {
@@ -31,6 +47,10 @@ Span::~Span() {
 
 // ** METHODS ** //
 
+void	Span::clearContainer() {
+	this->_container.clear();
+}
+
 void	Span::printContainer() {
 
 	std::cout << std::endl;
@@ -47,7 +67,7 @@ int		Span::longestSpan() {
 	std::vector<int>	tmp;
 
 	if (this->_container.size() < 2)
-		throw (std::exception());
+		throw (ContainerCantTakeN());
 
 	tmp = this->_container;
 	std::sort(tmp.begin(), tmp.end());
@@ -60,7 +80,7 @@ int		Span::shortestSpan() {
 	int					shortSpan;
 
 	if (this->_container.size() < 2)
-		throw (std::exception());
+		throw (ContainerInsufficient());
 
 	tmp = this->_container;
 	shortSpan = std::numeric_limits<int>::max();
@@ -75,7 +95,7 @@ int		Span::shortestSpan() {
 void	Span::addNumber(int number) {
 
 	if (this->_container.size() >= _N)
-		throw (std::exception());
+		throw (ContainerCantTakeN());
 
 	this->_container.push_back(number);
 }
@@ -83,9 +103,9 @@ void	Span::addNumber(int number) {
 void	Span::addNumber(std::vector<int>::iterator start, std::vector<int>::iterator end) {
 
 	if (this->_container.size() >= _N)
-		throw (std::exception());
+		throw (ContainerCantTakeN());
 	if ((this->_container.size() + (end - start)) > _N)
-		throw (std::exception());
+		throw (ContainerCantTakeN());
 
 	_container.insert(_container.end(), start, end);
 }

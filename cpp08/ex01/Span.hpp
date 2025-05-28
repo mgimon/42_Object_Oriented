@@ -18,6 +18,7 @@
 
 class Span {
 
+
 	private:
 
 		unsigned int		_N;
@@ -25,13 +26,17 @@ class Span {
 
 	public:
 
+		class	ContainerCantTakeN;
+		class	ContainerInsufficient;
+
 		Span();
 		Span(unsigned int N);
 		Span(const Span &ref);
 		Span& operator = (const Span &ref);
 		~Span();
 
-		void				printContainer();
+		void	printContainer();
+		void	clearContainer();
 
 		int		shortestSpan();
 		int		longestSpan();
