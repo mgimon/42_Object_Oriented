@@ -1,4 +1,4 @@
-NAME = span
+NAME = mutantstack
 
 SRCS = main.cpp
 
