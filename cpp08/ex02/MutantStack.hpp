@@ -24,44 +24,17 @@ class MutantStack : public std::stack<T> {
 	private:
 	public:
 
+		typedef typename std::stack<T>::container_type::iterator iterator;
+
 		MutantStack();
 		MutantStack(const MutantStack &ref);
 		MutantStack& operator = (const MutantStack &ref);
 		~MutantStack();
 
+		iterator begin();
+		iterator end();
+
 };
-
-template <typename T>
-void	printStack(T container) {
-
-	T copy = container;
-
-	std::cout << std::endl;
-	std::cout << "Your stack contains:" << std::endl;
-	std::cout << std::endl;
-
-	while (!copy.empty())
-	{
-		std::cout << copy.top() << std::endl;
-		copy.pop();
-	}
-	std::cout << std::endl;
-}
-
-template <typename T>
-void	printList(T container) {
-
-	std::cout << std::endl;
-	std::cout << "Your list contains:" << std::endl;
-	std::cout << std::endl;
-
-	for (typename T::iterator it = container.begin(); it != container.end(); ++it)
-	{
-		std::cout << *it << std::endl;
-	}
-	std::cout << std::endl;
-
-}
 
 
 #include "MutantStack.tpp"
