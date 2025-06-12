@@ -1,18 +1,53 @@
 
 #include "BitcoinExchange.hpp"
 
-bool	isValidDate(std::string str)
-{
-	char	c;
-	int		i = 0;
-	while (str[i])
+
+void	getcsv(std::ifstream& csvfile, BitcoinExchange& btcTool) {
+
+	std::string	line;
+
+	// get a line!
+	while (std::getline(csvfile, line))
 	{
-		c = str[i];
-		if (!std::isdigit(static_cast<unsigned char>(c)) && c != '-')
-			return (false);
-		i++;
+		std::stringstream	ssline(line);
+		std::string			key;
+		std::string			value;
+
+		// read until ',' and store in 'key'
+		if (std::getline(ssline, key, ','))
+		{
+			// read the rest and store in 'value', if did read
+			if (!std::getline(ssline, value))
+				value = "";
+		}
+		// save, except cabeceras
+		if (btcTool.isValidDateCsv(key))
+			btcTool.feedMapRow(key, value);
 	}
-	return (true);
+
+}
+
+void	getinputfile(std::ifstream& inputfile, BitcoinExchange& btcTool) {
+
+	std::string	line;
+
+	while (std::getline(inputfile, line))
+	{
+		std::string			key;
+		std::string			value;
+
+		//std::string.find() != std::find()
+		size_t	i = line.find(" | ");
+		if (i != std::string::npos)
+		{
+			key = line.substr(0, i);
+			value = line.substr(i + 3);
+
+			if (!key.empty())
+				btcTool.feedInputRow(key, value);
+		}
+	}
+
 }
 
 int main(int argc, char **argv)
@@ -22,7 +57,6 @@ int main(int argc, char **argv)
 
 	std::ifstream		inputfile(argv[1]);
 	std::ifstream		csvfile("data.csv");
-	std::string			line;
 	BitcoinExchange		btcTool;
 
 	if (!inputfile)
@@ -30,20 +64,10 @@ int main(int argc, char **argv)
 	if (!csvfile)
 		return (std::cerr << "Error: 'data.csv' file invalid or not found." << std::endl, 1);
 
-	while (std::getline(csvfile, line))
-	{
-		std::stringstream	ssline(line);
-		std::string			key;
-		std::string			value;
+	getcsv(csvfile, btcTool);
+	getinputfile(inputfile, btcTool);
 
-		if (std::getline(ssline, key, ','))
-		{
-			if (!std::getline(ssline, value))
-				value = "";
-		}
-		if (isValidDate(key))
-			btcTool.feedMapRow(key, value);
-	}
+	btcTool.processInputLineByLine();
 
 	csvfile.close();
 	inputfile.close();

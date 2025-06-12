@@ -6,7 +6,7 @@ HEADER = BitcoinExchange.hpp
 
 CC = c++
 RM = rm -f
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -g #-fsanitize=address -fsanitize=leak
+CFLAGS = -Wall -Wextra -Werror -std=c++98 #-g -fsanitize=address -fsanitize=leak
 
 %.o: %.cpp Makefile ${HEADER}
 		${CC} ${CFLAGS} -c $< -o $@

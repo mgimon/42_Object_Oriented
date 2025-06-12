@@ -23,6 +23,7 @@ class BitcoinExchange {
 	private:
 
 		std::map<std::string, float>	database_;
+		std::map<std::string, std::string>	input_;
 
 	public:
 
@@ -31,8 +32,17 @@ class BitcoinExchange {
 		BitcoinExchange& operator = (const BitcoinExchange &ref);
 		~BitcoinExchange();
 
-		void	feedMapRow(std::string key, std::string value);
 		void	printDatabase();
+		void	printBadInput(std::string input);
+		bool	isValidDateCsv(std::string str);
+		bool	isValidDate(std::string str);
+
+		void	feedMapRow(std::string key, std::string value);
+		void	feedInputRow(std::string key, std::string value);
+
+		void	processInputLine(std::string key, std::string value);
+		void	processInputLineByLine();
+		
 
 };
 
