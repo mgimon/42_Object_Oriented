@@ -6,6 +6,7 @@
 #include <iomanip>
 #include <cstdlib>
 #include <ctime> 
+#include <climits>
 #include <sstream>
 #include <limits>
 #include <algorithm>
@@ -23,7 +24,6 @@ class BitcoinExchange {
 	private:
 
 		std::map<std::string, float>	database_;
-		std::map<std::string, std::string>	input_;
 
 	public:
 
@@ -36,12 +36,10 @@ class BitcoinExchange {
 		void	printBadInput(std::string input);
 		bool	isValidDateCsv(std::string str);
 		bool	isValidDate(std::string str);
+		bool	isNum(const std::string& line);
 
 		void	feedMapRow(std::string key, std::string value);
-		void	feedInputRow(std::string key, std::string value);
-
-		void	processInputLine(std::string key, std::string value);
-		void	processInputLineByLine();
+		void	processInputFile(std::ifstream& inputfile);
 		
 
 };

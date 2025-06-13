@@ -27,29 +27,6 @@ void	getcsv(std::ifstream& csvfile, BitcoinExchange& btcTool) {
 
 }
 
-void	getinputfile(std::ifstream& inputfile, BitcoinExchange& btcTool) {
-
-	std::string	line;
-
-	while (std::getline(inputfile, line))
-	{
-		std::string			key;
-		std::string			value;
-
-		//std::string.find() != std::find()
-		size_t	i = line.find(" | ");
-		if (i != std::string::npos)
-		{
-			key = line.substr(0, i);
-			value = line.substr(i + 3);
-
-			if (!key.empty())
-				btcTool.feedInputRow(key, value);
-		}
-	}
-
-}
-
 int main(int argc, char **argv)
 {
 	if (argc != 2)
@@ -65,14 +42,13 @@ int main(int argc, char **argv)
 		return (std::cerr << "Error: 'data.csv' file invalid or not found." << std::endl, 1);
 
 	getcsv(csvfile, btcTool);
-	getinputfile(inputfile, btcTool);
 
-	btcTool.processInputLineByLine();
+	btcTool.processInputFile(inputfile);
 
 	csvfile.close();
 	inputfile.close();
 
-	btcTool.printDatabase();
+	//btcTool.printDatabase();
 
 	return (0);
 }

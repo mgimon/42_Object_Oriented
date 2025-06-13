@@ -35,7 +35,7 @@ bool	BitcoinExchange::isValidDateCsv(std::string str)
 }
 
 bool	BitcoinExchange::isValidDate(std::string str) {
-	int	year;
+	// year is not checked, can be any
 	int	month;
 	int	day;
 
@@ -57,7 +57,7 @@ bool	BitcoinExchange::isValidDate(std::string str) {
 		}
 		i++;
 	}
-	year = atoi(str.substr(0, 4).c_str());
+
 	month = atoi(str.substr(5, 2).c_str());
 	day = atoi(str.substr(8, 2).c_str());
 
@@ -65,6 +65,15 @@ bool	BitcoinExchange::isValidDate(std::string str) {
 		return (false);
 
 	return (true);
+}
+
+bool BitcoinExchange::isNum(const std::string& line) {
+	for (size_t i = 0; i < line.size(); ++i)
+	{
+		if (std::isalpha(static_cast<unsigned char>(line[i])))
+			return false;
+	}
+	return true;
 }
 
 void	BitcoinExchange::printDatabase() {
@@ -89,28 +98,48 @@ void	BitcoinExchange::feedMapRow(std::string key, std::string value) {
 	this->database_.insert(pair);
 }
 
-void	BitcoinExchange::feedInputRow(std::string key, std::string value) {
+void	BitcoinExchange::processInputFile(std::ifstream& inputfile) {
 
-	std::pair<std::string, std::string>	pair;
+	std::string	line;
+	std::string	date;
+	std::map<std::string, float>::iterator it;
 
-	pair = std::make_pair(key, value);
-	this->input_.insert(pair);
-}
-
-void	BitcoinExchange::processInputLineByLine() {
-	std::map<std::string, std::string>::iterator it = this->input_.begin();
-
-	while (it != this->input_.end())
+	while (std::getline(inputfile, line))
 	{
-		this->processInputLine(it->first, it->second);
-		++it;
+		std::string			key;
+		std::string			value;
+		it = this->database_.begin();
+
+		//std::string.find() != std::find()
+		if (line.length() >= 10 && isNum(line))
+		{
+			value = "";
+			key = line.substr(0, 10);
+			if (line. length() >= 14)
+				value = line.substr(13);
+			if (!isValidDate(key))
+				std::cout << "Error: bad input => " << key << std::endl;
+
+			if (!key.empty())
+			{
+
+					while (it != this->database_.end() && it->first <= key)
+						++it;
+					if (it != this->database_.begin())
+						--it;
+					long lvalue = static_cast<long>(atol(value.c_str()));
+					if (lvalue > INT_MAX)
+						std::cout << "Error: too large a number" << std::endl;
+					else if (lvalue < 0)
+						std::cout << "Error: not a positive number" << std::endl;
+					else
+					{
+						if (!value.empty())
+							std::cout << it->first << " => " << value << " = " << static_cast<float>(atof(value.c_str())) * it->second << std::endl;
+					}
+			}
+		}
 	}
 }
 
-void	BitcoinExchange::processInputLine(std::string key, std::string value) {
 
-	if (key.empty() || !isValidDate(key))
-		printBadInput(key);
-	// check negativo
-	// check maxint
-}
