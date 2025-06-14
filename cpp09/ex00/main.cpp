@@ -42,13 +42,10 @@ int main(int argc, char **argv)
 		return (std::cerr << "Error: 'data.csv' file invalid or not found." << std::endl, 1);
 
 	getcsv(csvfile, btcTool);
-
 	btcTool.processInputFile(inputfile);
 
 	csvfile.close();
 	inputfile.close();
-
-	//btcTool.printDatabase();
 
 	return (0);
 }

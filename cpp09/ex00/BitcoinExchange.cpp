@@ -71,9 +71,9 @@ bool BitcoinExchange::isNum(const std::string& line) {
 	for (size_t i = 0; i < line.size(); ++i)
 	{
 		if (std::isalpha(static_cast<unsigned char>(line[i])))
-			return false;
+			return (false);
 	}
-	return true;
+	return (true);
 }
 
 void	BitcoinExchange::printDatabase() {
@@ -104,18 +104,19 @@ void	BitcoinExchange::processInputFile(std::ifstream& inputfile) {
 	std::string	date;
 	std::map<std::string, float>::iterator it;
 
+	if (this->database_.empty())
+		return ;
 	while (std::getline(inputfile, line))
 	{
 		std::string			key;
 		std::string			value;
 		it = this->database_.begin();
 
-		//std::string.find() != std::find()
 		if (line.length() >= 10 && isNum(line))
 		{
 			value = "";
 			key = line.substr(0, 10);
-			if (line. length() >= 14)
+			if (line.length() >= 14)
 				value = line.substr(13);
 			if (!isValidDate(key))
 				std::cout << "Error: bad input => " << key << std::endl;
