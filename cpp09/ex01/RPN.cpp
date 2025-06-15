@@ -48,7 +48,7 @@ bool	RPN::executeStr(const std::string& str) {
 	int					N;
 
 	if (!isValid(str)) // parsing here
-		return (std::cout << RED << "Invalid arguments!" << RESET << std::endl, false);
+		return (std::cerr << RED << "Invalid arguments!" << RESET << std::endl, false);
 	while (ss >> token)
 	{
 		if (isNumber(token))
@@ -61,14 +61,14 @@ bool	RPN::executeStr(const std::string& str) {
 				myStack.pop();
 			}
 			else
-				return (std::cout << RED << "The pile is empty!" << RESET << std::endl, false);
+				return (std::cerr << RED << "The pile is empty!" << RESET << std::endl, false);
 			if (this->myStack.size() > 0)
 			{
 				N = myStack.top();
 				myStack.pop();
 			}
 			else
-				return (std::cout << RED << "The pile is empty!" << RESET << std::endl, false);
+				return (std::cerr << RED << "The pile is empty!" << RESET << std::endl, false);
 
 			long result;
 
@@ -78,7 +78,7 @@ bool	RPN::executeStr(const std::string& str) {
 				case '*': result = N * M; break;
 				case '/': 
 				if (M == 0) {
-					return (std::cout << RED << "Cannot divide by 0!" << RESET << std::endl, false); break; }
+					return (std::cerr << RED << "Cannot divide by 0!" << RESET << std::endl, false); break; }
 				result = N / M; break;
 			}
 			myStack.push(result);
