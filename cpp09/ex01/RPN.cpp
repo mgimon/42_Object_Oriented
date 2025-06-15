@@ -128,7 +128,7 @@ bool	RPN::isValid(const std::string& str) {
 		return (false);
 	while (ss >> token)
 	{
-		if (numbers >= 10)
+		if (numbers >= 20)
 			return (false);
 		if (!isNumber(token) && !isOperator(token))
 			return (false);
