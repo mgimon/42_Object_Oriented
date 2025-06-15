@@ -2,12 +2,11 @@
 
 RPN::RPN() : result(0) {}
 
-RPN::RPN(const RPN& ref) : nCount(ref.nCount), myStack(ref.myStack), result(ref.result) {}
+RPN::RPN(const RPN& ref) : myStack(ref.myStack), result(ref.result) {}
 
 RPN& RPN::operator = (const RPN& ref) {
 	if (this != &ref)
 	{
-		this->nCount = ref.nCount;
 		this->myStack = ref.myStack;
 		this->result = ref.result;
 	}
@@ -18,7 +17,7 @@ RPN::~RPN() {}
 
 const long&	RPN::getResult() const { return (this->result); }
 
-bool isNumber(const std::string& s) {
+bool	RPN::isNumber(const std::string& s) {
 
 	if (s.empty())
 		return (false);
@@ -40,24 +39,37 @@ bool	RPN::isOperator(const std::string& str) {
 	return (false);
 }
 
-// checks also spaces
-bool	RPN::parseStr(const std::string& str) {
+
+bool	RPN::executeStr(const std::string& str) {
+
 	std::istringstream	ss(str);
 	std::string			token;
+	int					M;
+	int					N;
 
-	if (!isValid(str))
+	if (!isValid(str)) // parsing here
 		return (std::cout << RED << "Invalid arguments!" << RESET << std::endl, false);
 	while (ss >> token)
 	{
 		if (isNumber(token))
-		{
 			this->myStack.push(std::atoi(token.c_str()));
-			this->nCount++;
-		}
 		else if (isOperator(token))
 		{
-			int M = myStack.top(); myStack.pop();
-			int N = myStack.top(); myStack.pop();
+			if (this->myStack.size() > 0)
+			{
+				M = myStack.top();
+				myStack.pop();
+			}
+			else
+				return (std::cout << RED << "The pile is empty!" << RESET << std::endl, false);
+			if (this->myStack.size() > 0)
+			{
+				N = myStack.top();
+				myStack.pop();
+			}
+			else
+				return (std::cout << RED << "The pile is empty!" << RESET << std::endl, false);
+
 			long result;
 
 			switch (token[0]) {
@@ -80,7 +92,29 @@ bool	RPN::isSmallNum(const std::string& str) {
 
 	long l = std::atol(str.c_str());
 
-	if (l <= INT_MAX)
+	if (l > INT_MAX || l < INT_MIN)
+		return (false);
+	return (true);
+}
+
+bool	RPN::tooManySpaces(const std::string& str)
+{
+	int	space = 0;
+	int	i = 0;
+
+	while(str[i])
+	{
+		if (std::isspace(str[i]))
+		{
+			space++;
+			if (space > 1)
+				return (true);
+		}
+		else
+			space--;
+		i++;
+	}
+	if (str[0] && str[0] == ' ' && str.length() == 1)
 		return (true);
 	return (false);
 }
@@ -90,6 +124,8 @@ bool	RPN::isValid(const std::string& str) {
 	std::string			token;
 	int					numbers = 0;
 
+	if (tooManySpaces(str))
+		return (false);
 	while (ss >> token)
 	{
 		if (numbers >= 10)

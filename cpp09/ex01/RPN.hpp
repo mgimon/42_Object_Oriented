@@ -20,11 +20,9 @@
 #define RESET   "\033[0m"
 #define GREEN   "\033[32m"
 
-// TODO : check for !+ 2 consecutive operators!
 class RPN {
 	private:
 
-		unsigned int	nCount;
 		std::stack<int>	myStack;
 		long			result;
 
@@ -36,11 +34,13 @@ class RPN {
 		~RPN();
 
 		bool	isOperator(const std::string& str);
-		bool	parseStr(const std::string& str); // check also spaces
 		bool	isSmallNum(const std::string& str);
 		bool	isValid(const std::string& str);
+		bool	tooManySpaces(const std::string& str);
+		bool	isNumber(const std::string& s);
 
 		const long&	getResult() const;
+		bool	executeStr(const std::string& str);
 
 };
 
