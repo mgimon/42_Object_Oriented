@@ -1,5 +1,18 @@
 #!/bin/bash
 
+YELLOW='\033[33m'
+RESET='\033[0m'
+
+# Arrays del subject
+subject_tests=(
+  "8 9 * 9 -9 - 9 - 4 - 1 +"
+  "8 9 * 9 - 9 - 9 - 4 - 1 +"
+  "7 7 * 7 - "
+  "7 7 * 7 -"
+  "1 2 * 2 / 2 * 2 4 - +"
+  "(1 + 1)"
+)
+
 # Array con expresiones válidas para stress test
 valid_tests=(
   "3 -2 5 + * 4 /"
@@ -25,13 +38,22 @@ invalid_tests=(
   "+ - * / 1 2 3 4"
 )
 
-echo "### TESTS VÁLIDOS ###"
+echo -e
+echo -e "${YELLOW}### SUBJECT TESTS ###${RESET}"
+for test in "${subject_tests[@]}"; do
+  echo -e "\nTest: '$test'"
+  ./RPN "$test"
+done
+
+echo -e
+echo -e "${YELLOW}### TESTS VÁLIDOS ###${RESET}"
 for test in "${valid_tests[@]}"; do
   echo -e "\nTest: '$test'"
   ./RPN "$test"
 done
 
-echo -e "\n### TESTS INVÁLIDOS / ERRORES ###"
+echo -e
+echo -e "${YELLOW}### TESTS INVÁLIDOS / ERRORES ###${RESET}"
 for test in "${invalid_tests[@]}"; do
   echo -e "\nTest: '$test'"
   ./RPN "$test"
