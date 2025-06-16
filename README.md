@@ -52,7 +52,7 @@ Check them out!
 <div align="center">
   <table style="border-collapse: collapse;">
     <tr>
-      <th colspan="2"><h1>42 OOP Projects</h1></th>
+      <th colspan="2"><h3>42 OOP Projects</h3></th>
     </tr>
     <tr>
       <td align="center" style="min-width: 350px; white-space: nowrap;">
