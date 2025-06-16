@@ -35,6 +35,12 @@ Check them out!
     <tr>
      <td colspan="2" align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp07">Cpp07</a></td>
     </tr>
+    <tr>
+     <td colspan="2" align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp08">Cpp08</a></td>
+    </tr>
+    <tr>
+     <td colspan="2" align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp09">Cpp09</a></td>
+    </tr>
     
   </table>
 </div>
