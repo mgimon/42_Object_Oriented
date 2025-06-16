@@ -50,7 +50,7 @@ Check them out!
 ## Projects
 <br>
 <div align="center">
-  <table style="width:80%; border-collapse: collapse;">
+  <table style="width:100%; border-collapse: collapse;">
     <tr>
       <th colspan="2"><h2>42 OOP Projects</h2></th>
     </tr>
