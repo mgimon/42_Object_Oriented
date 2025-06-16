@@ -4,7 +4,7 @@ This is a collection of Object-Oriented projects at 42 Network in Barcelona. Eac
 
 Check them out!
 
-## Projects
+<!-- ## Projects
 <br>
 <div align="center">
   <table style="width:80%; font-size: 20px;">
@@ -12,10 +12,10 @@ Check them out!
       <th colspan="2">42 OOP Projects</th>
     </tr>
     <tr>
-     <td colspan="1" align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp00">Cpp00</a></td>
+     <td colspan="2" align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp00">Cpp00</a></td>
     </tr>
     <tr>
-     <td colspan="1" align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp01">Cpp01</a></td>
+     <td colspan="2" align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp01">Cpp01</a></td>
     </tr>
     <tr>
      <td colspan="2" align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp02">Cpp02</a></td>
@@ -44,8 +44,40 @@ Check them out!
     
   </table>
 </div>
-<br>
+<br> -->
 <!--<td colspan="2" align="center"><a href="https://github.com/mgimon/42repo/tree/master/fractol">Fractol</a></td> -->
+
+## Projects
+<br>
+<div align="center">
+  <table style="width:80%; font-size: 20px;">
+    <tr>
+      <th colspan="2">42 OOP Projects</th>
+    </tr>
+    <tr>
+      <td align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp00">Cpp00</a></td>
+      <td align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp01">Cpp01</a></td>
+    </tr>
+    <tr>
+      <td align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp02">Cpp02</a></td>
+      <td align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp03">Cpp03</a></td>
+    </tr>
+    <tr>
+      <td align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp04">Cpp04</a></td>
+      <td align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp05">Cpp05</a></td>
+    </tr>
+    <tr>
+      <td align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp06">Cpp06</a></td>
+      <td align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp07">Cpp07</a></td>
+    </tr>
+    <tr>
+      <td align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp08">Cpp08</a></td>
+      <td align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp09">Cpp09</a></td>
+    </tr>
+  </table>
+</div>
+<br>
+
 
 ##
 
