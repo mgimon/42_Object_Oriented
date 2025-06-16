@@ -49,15 +49,36 @@ Check them out!
 
 ## Projects
 
-## 42 OOP Projects
+<br>
+<div align="center">
+  <table style="width:80%; border-collapse: collapse;">
+    <tr>
+      <th colspan="2" style="font-size: 28px; padding: 12px;">42 OOP Projects</th>
+    </tr>
+    <tr>
+      <td align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp00" style="font-size: 22px; font-weight: bold;">Cpp00</a></td>
+      <td align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp01" style="font-size: 22px; font-weight: bold;">Cpp01</a></td>
+    </tr>
+    <tr>
+      <td align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp02" style="font-size: 22px; font-weight: bold;">Cpp02</a></td>
+      <td align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp03" style="font-size: 22px; font-weight: bold;">Cpp03</a></td>
+    </tr>
+    <tr>
+      <td align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp04" style="font-size: 22px; font-weight: bold;">Cpp04</a></td>
+      <td align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp05" style="font-size: 22px; font-weight: bold;">Cpp05</a></td>
+    </tr>
+    <tr>
+      <td align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp06" style="font-size: 22px; font-weight: bold;">Cpp06</a></td>
+      <td align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp07" style="font-size: 22px; font-weight: bold;">Cpp07</a></td>
+    </tr>
+    <tr>
+      <td align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp08" style="font-size: 22px; font-weight: bold;">Cpp08</a></td>
+      <td align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp09" style="font-size: 22px; font-weight: bold;">Cpp09</a></td>
+    </tr>
+  </table>
+</div>
+<br>
 
-| Proyecto 1 | Proyecto 2 |
-|------------|------------|
-| [Cpp00](https://github.com/mgimon/42repo_oop/tree/master/cpp00) | [Cpp01](https://github.com/mgimon/42repo_oop/tree/master/cpp01) |
-| [Cpp02](https://github.com/mgimon/42repo_oop/tree/master/cpp02) | [Cpp03](https://github.com/mgimon/42repo_oop/tree/master/cpp03) |
-| [Cpp04](https://github.com/mgimon/42repo_oop/tree/master/cpp04) | [Cpp05](https://github.com/mgimon/42repo_oop/tree/master/cpp05) |
-| [Cpp06](https://github.com/mgimon/42repo_oop/tree/master/cpp06) | [Cpp07](https://github.com/mgimon/42repo_oop/tree/master/cpp07) |
-| [Cpp08](https://github.com/mgimon/42repo_oop/tree/master/cpp08) | [Cpp09](https://github.com/mgimon/42repo_oop/tree/master/cpp09) |
 
 
 
