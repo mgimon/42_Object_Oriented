@@ -90,7 +90,24 @@ Check them out!
         <span style="visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
       </td>
       <td align="center" style="min-width: 350px; white-space: nowrap;">
-        <h3><a href="https://github.com/mgimon/42repo
+        <h3><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp07">Cpp07</a></h3>
+        <span style="visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" style="min-width: 350px; white-space: nowrap;">
+        <h3><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp08">Cpp08</a></h3>
+        <span style="visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      </td>
+      <td align="center" style="min-width: 350px; white-space: nowrap;">
+        <h3><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp09">Cpp09</a></h3>
+        <span style="visibility:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      </td>
+    </tr>
+  </table>
+</div>
+<br>
+
 
 
 
