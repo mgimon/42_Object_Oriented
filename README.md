@@ -51,13 +51,9 @@ Check them out!
 <br>
 <div align="center">
   <table style="border-collapse: collapse;">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <tr>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;42 OOP Projects&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <th colspan="2"><h1>42 OOP Projects</h1></th>
     </tr>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <tr>
       <td align="center" style="min-width: 350px; white-space: nowrap;">
         <h3><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp00">Cpp00</a></h3>
