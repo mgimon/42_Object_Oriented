@@ -12,10 +12,10 @@ Check them out!
       <th colspan="2">42 OOP Projects</th>
     </tr>
     <tr>
-     <td colspan="2" align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp00">Cpp00</a></td>
+     <td colspan="1" align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp00">Cpp00</a></td>
     </tr>
     <tr>
-     <td colspan="2" align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp01">Cpp01</a></td>
+     <td colspan="1" align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp01">Cpp01</a></td>
     </tr>
     <tr>
      <td colspan="2" align="center"><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp02">Cpp02</a></td>
