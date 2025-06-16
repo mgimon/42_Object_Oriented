@@ -52,7 +52,9 @@ Check them out!
 <div align="center">
   <table style="border-collapse: collapse;">
     <tr>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <th colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;42 OOP Projects&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </tr>
     <tr>
       <td align="center" style="min-width: 350px; white-space: nowrap;">
