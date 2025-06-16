@@ -50,33 +50,34 @@ Check them out!
 ## Projects
 <br>
 <div align="center">
-  <table style="width: 800px; max-width: 95vw; border-collapse: collapse;">
+  <table style="border-collapse: collapse; max-width: 100%;">
     <tr>
       <th colspan="2"><h2>42 OOP Projects</h2></th>
     </tr>
     <tr>
-      <td align="center"><h3><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp00">Cpp00</a></h3></td>
-      <td align="center"><h3><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp01">Cpp01</a></h3></td>
+      <td align="center" style="min-width: 350px;"><h3><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp00">Cpp00</a></h3></td>
+      <td align="center" style="min-width: 350px;"><h3><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp01">Cpp01</a></h3></td>
     </tr>
     <tr>
-      <td align="center"><h3><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp02">Cpp02</a></h3></td>
-      <td align="center"><h3><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp03">Cpp03</a></h3></td>
+      <td align="center" style="min-width: 350px;"><h3><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp02">Cpp02</a></h3></td>
+      <td align="center" style="min-width: 350px;"><h3><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp03">Cpp03</a></h3></td>
     </tr>
     <tr>
-      <td align="center"><h3><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp04">Cpp04</a></h3></td>
-      <td align="center"><h3><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp05">Cpp05</a></h3></td>
+      <td align="center" style="min-width: 350px;"><h3><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp04">Cpp04</a></h3></td>
+      <td align="center" style="min-width: 350px;"><h3><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp05">Cpp05</a></h3></td>
     </tr>
     <tr>
-      <td align="center"><h3><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp06">Cpp06</a></h3></td>
-      <td align="center"><h3><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp07">Cpp07</a></h3></td>
+      <td align="center" style="min-width: 350px;"><h3><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp06">Cpp06</a></h3></td>
+      <td align="center" style="min-width: 350px;"><h3><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp07">Cpp07</a></h3></td>
     </tr>
     <tr>
-      <td align="center"><h3><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp08">Cpp08</a></h3></td>
-      <td align="center"><h3><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp09">Cpp09</a></h3></td>
+      <td align="center" style="min-width: 350px;"><h3><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp08">Cpp08</a></h3></td>
+      <td align="center" style="min-width: 350px;"><h3><a href="https://github.com/mgimon/42repo_oop/tree/master/cpp09">Cpp09</a></h3></td>
     </tr>
   </table>
 </div>
 <br>
+
 
 
 
