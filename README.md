@@ -49,11 +49,15 @@ Check them out!
 
 ## Projects
 
-- [Cpp00](https://github.com/mgimon/42repo_oop/tree/master/cpp00) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Cpp01](https://github.com/mgimon/42repo_oop/tree/master/cpp01)
-- [Cpp02](https://github.com/mgimon/42repo_oop/tree/master/cpp02) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Cpp03](https://github.com/mgimon/42repo_oop/tree/master/cpp03)
-- [Cpp04](https://github.com/mgimon/42repo_oop/tree/master/cpp04) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Cpp05](https://github.com/mgimon/42repo_oop/tree/master/cpp05)
-- [Cpp06](https://github.com/mgimon/42repo_oop/tree/master/cpp06) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Cpp07](https://github.com/mgimon/42repo_oop/tree/master/cpp07)
-- [Cpp08](https://github.com/mgimon/42repo_oop/tree/master/cpp08) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Cpp09](https://github.com/mgimon/42repo_oop/tree/master/cpp09)
+## 42 OOP Projects
+
+| Proyecto 1 | Proyecto 2 |
+|------------|------------|
+| [Cpp00](https://github.com/mgimon/42repo_oop/tree/master/cpp00) | [Cpp01](https://github.com/mgimon/42repo_oop/tree/master/cpp01) |
+| [Cpp02](https://github.com/mgimon/42repo_oop/tree/master/cpp02) | [Cpp03](https://github.com/mgimon/42repo_oop/tree/master/cpp03) |
+| [Cpp04](https://github.com/mgimon/42repo_oop/tree/master/cpp04) | [Cpp05](https://github.com/mgimon/42repo_oop/tree/master/cpp05) |
+| [Cpp06](https://github.com/mgimon/42repo_oop/tree/master/cpp06) | [Cpp07](https://github.com/mgimon/42repo_oop/tree/master/cpp07) |
+| [Cpp08](https://github.com/mgimon/42repo_oop/tree/master/cpp08) | [Cpp09](https://github.com/mgimon/42repo_oop/tree/master/cpp09) |
 
 
 
