@@ -21,6 +21,7 @@
 #define RESET   "\033[0m"
 #define GREEN   "\033[32m"
 
+
 class PmergeMe {
     private:
         std::vector<int>    vC;
@@ -35,7 +36,14 @@ class PmergeMe {
         bool	isNumber(const std::string& s);
         bool    isSmallNum(const std::string& s);
         bool    getArguments(int argc, char **argv);
-        void    printContainers() const;
+        void    printContainerD(const std::deque<int> &dC) const;
+        void    printContainerV(const std::vector<int> &vC) const;
+        const std::deque<int>  getContainerD() const;
+        const std::vector<int>  getContainerV() const;
+
+        std::vector<int>    vcExtractMaxs(std::vector<int> vC);
+        std::vector<int>    vcExtractMins(std::vector<int> vC);
+        std::vector<int>    vcSort(std::vector<int> vC);
 };
 
 #endif

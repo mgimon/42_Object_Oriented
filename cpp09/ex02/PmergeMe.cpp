@@ -16,23 +16,34 @@ PmergeMe& PmergeMe::operator = (const PmergeMe& ref) {
 
 PmergeMe::~PmergeMe() {}
 
-void    PmergeMe::printContainers() const {
+const std::deque<int>  PmergeMe::getContainerD() const { return (this->dC); }
 
-    std::vector<int>::const_iterator vIt = this->vC.begin();
-    std::deque<int>::const_iterator  dIt = this->dC.begin();
+const std::vector<int>  PmergeMe::getContainerV() const { return (this->vC); }
 
-    std::cout << GRAY << "### Printing vector ###" << RESET << std::endl;
-    while (vIt < this->vC.end())
-    {
-        std::cout << *vIt << std::endl;
-        ++vIt;
-    }
+
+void    PmergeMe::printContainerD(const std::deque<int> &dC) const {
+
+    std::deque<int>::const_iterator  dIt = dC.begin();
+
     std::cout << std::endl;
     std::cout << GRAY << "### Printing deque ###" << RESET << std::endl;
-    while (dIt < this->dC.end())
+    while (dIt < dC.end())
     {
         std::cout << *dIt << std::endl;
         ++dIt;
+    }
+}
+
+void    PmergeMe::printContainerV(const std::vector<int> &vC) const {
+
+    std::vector<int>::const_iterator vIt = vC.begin();
+
+    std::cout << std::endl;
+    std::cout << GRAY << "### Printing vector ###" << RESET << std::endl;
+    while (vIt < vC.end())
+    {
+        std::cout << *vIt << std::endl;
+        ++vIt;
     }
 }
 
@@ -82,4 +93,12 @@ bool    PmergeMe::getArguments(int argc, char **argv) {
         this->dC.push_back(atoi(argv[i]));
     }
     return (true);
+}
+
+std::vector<int>    vcExtractMaxs(std::vector<int> vC) {
+    
+}
+
+std::vector<int>    vcExtractMins(std::vector<int> vC) {
+    
 }

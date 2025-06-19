@@ -11,7 +11,8 @@ int main(int argc, char **argv)
     if (!sortTool.getArguments(argc, argv))
         return (std::cerr << RED << "One or more elements were invalid!" << RESET << std::endl, 1);
     
-    sortTool.printContainers();
+    sortTool.printContainerD(sortTool.getContainerD());
+    sortTool.printContainerV(sortTool.getContainerV());
 
     return (0);
 }
