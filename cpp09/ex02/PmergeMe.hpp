@@ -43,6 +43,7 @@ class PmergeMe {
 
         std::vector<int>    vcExtractMaxs(std::vector<int> vC);
         std::vector<int>    vcExtractMins(std::vector<int> vC);
+        int                 findInsertPosition(std::vector<int> sorted, int number);
         std::vector<int>    vcSort(std::vector<int> vC);
 };
 

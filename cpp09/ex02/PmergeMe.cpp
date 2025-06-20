@@ -95,10 +95,79 @@ bool    PmergeMe::getArguments(int argc, char **argv) {
     return (true);
 }
 
-std::vector<int>    vcExtractMaxs(std::vector<int> vC) {
-    
+std::vector<int>    PmergeMe::vcExtractMaxs(std::vector<int> vC) {
+    std::vector<int>            extraction;
+    int                         stop;
+
+    if (vC.size() % 2 == 0)
+        stop = 1;
+    else
+        stop = 2;
+    for (size_t i = 0; i < vC.size() - stop; i += 2)
+    {
+            if (vC[i] > vC[i + 1])
+                extraction.push_back(vC[i]);
+            else
+                extraction.push_back(vC[i + 1]);
+    }
+    return (extraction);
 }
 
-std::vector<int>    vcExtractMins(std::vector<int> vC) {
+std::vector<int>    PmergeMe::vcExtractMins(std::vector<int> vC) {
+    std::vector<int>            extraction;
+    int                         stop;
+
+    if (vC.size() % 2 == 0)
+        stop = 1;
+    else
+        stop = 2;
+    for (size_t i = 0; i < vC.size() - stop; i += 2)
+    {
+            if (vC[i] < vC[i + 1])
+                extraction.push_back(vC[i]);
+            else
+                extraction.push_back(vC[i + 1]);
+    }
+    return (extraction);
+}
+
+int PmergeMe::findInsertPosition(std::vector<int> sorted, int number) {
+
+    for (int i = 0; i < (int)sorted.size(); i++)
+    {
+        if (number <= sorted[i])
+            return (i);
+    }
+    return (sorted.size());
+}
+
+std::vector<int>    PmergeMe::vcSort(std::vector<int> vC) {
+
+    std::vector<int>    sortedMaxs;
+    int                 pos;
+    int                 odd = 0;
+
+    if (vC.size() <= 1)
+        return (vC);
+    std::vector<int>    maxs = vcExtractMaxs(vC);
+    std::vector<int>    mins = vcExtractMins(vC);
+    if (vC.size() % 2 != 0)
+        odd = vC.back();
     
+    sortedMaxs = vcSort(maxs); // recursion-sort maxs
+
+    // find pos and insert mins
+    for (std::vector<int>::iterator it = mins.begin(); it < mins.end(); ++it)
+    {
+        pos =  findInsertPosition(sortedMaxs, *it);
+        sortedMaxs.insert(sortedMaxs.begin() + pos, *it);
+    }
+    // find pos and insert lonely element (if odd array)
+    if (odd)
+    {
+        pos =  findInsertPosition(sortedMaxs, odd);
+        sortedMaxs.insert(sortedMaxs.begin() + pos, odd);
+    }
+    
+    return (sortedMaxs);
 }
