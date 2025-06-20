@@ -49,16 +49,16 @@ class PmergeMe {
         int                     getN() const;
 
         // Algo - Vector
-        std::vector<int>    vcExtractMaxs(std::vector<int> vC);
-        std::vector<int>    vcExtractMins(std::vector<int> vC);
-        int                 findInsertPosition(std::vector<int> sorted, int number);
-        std::vector<int>    vcSort(std::vector<int> vC);
+        std::vector<int>    vcExtractMaxs(const std::vector<int>& vC);
+        std::vector<int>    vcExtractMins(const std::vector<int>& vC);
+        int                 findInsertPosition(const std::vector<int>& sorted, int number);
+        std::vector<int>    vcSort(const std::vector<int>& vC);
 
         // Algo - Deque
-        std::deque<int>    dcExtractMaxs(std::deque<int> dC);
-        std::deque<int>    dcExtractMins(std::deque<int> dC);
-        int                findInsertPosition(std::deque<int> sorted, int number);
-        std::deque<int>    dcSort(std::deque<int> dC);
+        std::deque<int>    dcExtractMaxs(const std::deque<int>& dC);
+        std::deque<int>    dcExtractMins(const std::deque<int>& dC);
+        int                findInsertPosition(const std::deque<int>& sorted, int number);
+        std::deque<int>    dcSort(const std::deque<int>& dC);
 
 };
 

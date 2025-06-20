@@ -110,7 +110,7 @@ bool    PmergeMe::getArguments(int argc, char **argv) {
 
 // ************************* VECTOR IMPLEMENTATIONS ************************* //
 
-std::vector<int>    PmergeMe::vcExtractMaxs(std::vector<int> vC) {
+std::vector<int>    PmergeMe::vcExtractMaxs(const std::vector<int>& vC) {
     std::vector<int>            extraction;
     int                         stop;
 
@@ -128,7 +128,7 @@ std::vector<int>    PmergeMe::vcExtractMaxs(std::vector<int> vC) {
     return (extraction);
 }
 
-std::vector<int>    PmergeMe::vcExtractMins(std::vector<int> vC) {
+std::vector<int>    PmergeMe::vcExtractMins(const std::vector<int>& vC) {
     std::vector<int>            extraction;
     int                         stop;
 
@@ -146,7 +146,7 @@ std::vector<int>    PmergeMe::vcExtractMins(std::vector<int> vC) {
     return (extraction);
 }
 
-int PmergeMe::findInsertPosition(std::vector<int> sorted, int number) {
+int PmergeMe::findInsertPosition(const std::vector<int>& sorted, int number) {
 
     for (int i = 0; i < (int)sorted.size(); i++)
     {
@@ -156,7 +156,7 @@ int PmergeMe::findInsertPosition(std::vector<int> sorted, int number) {
     return (sorted.size());
 }
 
-std::vector<int>    PmergeMe::vcSort(std::vector<int> vC) {
+std::vector<int>    PmergeMe::vcSort(const std::vector<int>& vC) {
 
     std::vector<int>    sortedMaxs;
     int                 pos;
@@ -189,7 +189,7 @@ std::vector<int>    PmergeMe::vcSort(std::vector<int> vC) {
 
 // ************************* DEQUE IMPLEMENTATIONS ************************* //
 
-std::deque<int>    PmergeMe::dcExtractMaxs(std::deque<int> dC) {
+std::deque<int>    PmergeMe::dcExtractMaxs(const std::deque<int>& dC) {
     std::deque<int>            extraction;
     int                         stop;
 
@@ -207,7 +207,7 @@ std::deque<int>    PmergeMe::dcExtractMaxs(std::deque<int> dC) {
     return (extraction);
 }
 
-std::deque<int>    PmergeMe::dcExtractMins(std::deque<int> dC) {
+std::deque<int>    PmergeMe::dcExtractMins(const std::deque<int>& dC) {
     std::deque<int>            extraction;
     int                         stop;
 
@@ -225,7 +225,7 @@ std::deque<int>    PmergeMe::dcExtractMins(std::deque<int> dC) {
     return (extraction);
 }
 
-int PmergeMe::findInsertPosition(std::deque<int> sorted, int number) {
+int PmergeMe::findInsertPosition(const std::deque<int>& sorted, int number) {
 
     for (int i = 0; i < (int)sorted.size(); i++)
     {
@@ -235,7 +235,7 @@ int PmergeMe::findInsertPosition(std::deque<int> sorted, int number) {
     return (sorted.size());
 }
 
-std::deque<int>    PmergeMe::dcSort(std::deque<int> dC) {
+std::deque<int>    PmergeMe::dcSort(const std::deque<int>& dC) {
 
     std::deque<int>     sortedMaxs;
     int                 pos;
