@@ -1,31 +1,36 @@
 
 #include "PmergeMe.hpp"
-
+#include <sys/time.h>
 
 int main(int argc, char **argv)
 {
+    timeval     start;
+    timeval     end;
     PmergeMe    sortTool;
-    double      time;
+    
 
     if (argc < 3)
-        std::cerr << RED << "Not enough elements to sort!" << RESET << std::endl;
+        return (std::cerr << RED << "Not enough elements to sort!" << RESET << std::endl, 1);
+    if (argc > 5000)
+        return (std::cerr << RED << "Too many elements!" << RESET << std::endl, 1);
     
     if (!sortTool.getArguments(argc, argv))
         return (std::cerr << RED << "One or more elements were invalid!" << RESET << std::endl, 1);
-    
-    //sortTool.printContainerD(sortTool.getContainerD());
-    sortTool.printContainerV(sortTool.getContainerV());
+    std::cout << std::endl;
 
-    clock_t start = clock();
+    sortTool.printContainerV("Before", sortTool.getContainerV());
+
+    gettimeofday(&start, NULL);
     std::vector<int>    sortedV = sortTool.vcSort(sortTool.getContainerV());
-    clock_t end = clock();
-    time = 1000.0 * (end - start) / CLOCKS_PER_SEC;
+    gettimeofday(&end, NULL);
+    sortTool.printContainerV("After", sortedV);
+    sortTool.printTime("std::vector", sortTool.getN(), start, end);
 
-    std::cout << "------------" << std::endl;
-    sortTool.printContainerV(sortedV);
-
-    std::cout << GREEN << "Time: " << time << RESET << std::endl;
-
+    gettimeofday(&start, NULL);
+    std::deque<int>    sortedD = sortTool.dcSort(sortTool.getContainerD());
+    gettimeofday(&end, NULL);
+    sortTool.printTime("std::deque", sortTool.getN(), start, end);
+    
 
 
     return (0);

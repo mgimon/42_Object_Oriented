@@ -26,6 +26,7 @@ class PmergeMe {
     private:
         std::vector<int>    vC;
         std::deque<int>     dC;
+        int                 N;
 
     public:
         PmergeMe();
@@ -33,18 +34,32 @@ class PmergeMe {
         PmergeMe& operator = (const PmergeMe& ref);
         ~PmergeMe();
 
+        // Prints
+        void    printContainerD(const std::string& word, const std::deque<int> &dC) const;
+        void    printContainerV(const std::string& word, const std::vector<int> &vC) const;
+        void    printTime(const std::string& word, int number, timeval start, timeval end);
+
+        // Utils
         bool	isNumber(const std::string& s);
         bool    isSmallNum(const std::string& s);
         bool    getArguments(int argc, char **argv);
-        void    printContainerD(const std::deque<int> &dC) const;
-        void    printContainerV(const std::vector<int> &vC) const;
-        const std::deque<int>  getContainerD() const;
-        const std::vector<int>  getContainerV() const;
 
+        const std::deque<int>   getContainerD() const;
+        const std::vector<int>  getContainerV() const;
+        int                     getN() const;
+
+        // Algo - Vector
         std::vector<int>    vcExtractMaxs(std::vector<int> vC);
         std::vector<int>    vcExtractMins(std::vector<int> vC);
         int                 findInsertPosition(std::vector<int> sorted, int number);
         std::vector<int>    vcSort(std::vector<int> vC);
+
+        // Algo - Deque
+        std::deque<int>    dcExtractMaxs(std::deque<int> dC);
+        std::deque<int>    dcExtractMins(std::deque<int> dC);
+        int                findInsertPosition(std::deque<int> sorted, int number);
+        std::deque<int>    dcSort(std::deque<int> dC);
+
 };
 
 #endif
