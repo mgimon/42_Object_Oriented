@@ -146,46 +146,24 @@ std::vector<int>    PmergeMe::vcExtractMins(const std::vector<int>& vC) {
     return (extraction);
 }
 
-int PmergeMe::findInsertPosition(const std::vector<int>& sorted, int number) {
-
-    for (int i = 0; i < (int)sorted.size(); i++)
-    {
-        if (number <= sorted[i])
-            return (i);
-    }
-    return (sorted.size());
-}
-
-std::vector<int>    PmergeMe::vcSort(const std::vector<int>& vC) {
-
-    std::vector<int>    sortedMaxs;
-    int                 pos;
-    int                 odd = 0;
+std::vector<int> PmergeMe::vcSort(const std::vector<int>& vC) {
 
     if (vC.size() <= 1)
         return (vC);
-    std::vector<int>    maxs = vcExtractMaxs(vC);
-    std::vector<int>    mins = vcExtractMins(vC);
-    if (vC.size() % 2 != 0)
-        odd = vC.back();
-    
-    sortedMaxs = vcSort(maxs); // recursion-sort maxs
 
-    // find pos and insert mins
+    std::vector<int> maxs = vcExtractMaxs(vC);
+    std::vector<int> mins = vcExtractMins(vC);
+    std::vector<int> sortedMaxs = vcSort(maxs);
+
     for (std::vector<int>::iterator it = mins.begin(); it < mins.end(); ++it)
-    {
-        pos =  findInsertPosition(sortedMaxs, *it);
-        sortedMaxs.insert(sortedMaxs.begin() + pos, *it);
-    }
-    // find pos and insert lonely element (if odd array)
-    if (odd)
-    {
-        pos =  findInsertPosition(sortedMaxs, odd);
-        sortedMaxs.insert(sortedMaxs.begin() + pos, odd);
-    }
-    
+        sortedMaxs.insert(std::lower_bound(sortedMaxs.begin(), sortedMaxs.end(), *it), *it);
+
+    if (vC.size() % 2 != 0)
+        sortedMaxs.insert(std::lower_bound(sortedMaxs.begin(), sortedMaxs.end(), vC.back()), vC.back());
+
     return (sortedMaxs);
 }
+
 
 // ************************* DEQUE IMPLEMENTATIONS ************************* //
 
@@ -225,43 +203,21 @@ std::deque<int>    PmergeMe::dcExtractMins(const std::deque<int>& dC) {
     return (extraction);
 }
 
-int PmergeMe::findInsertPosition(const std::deque<int>& sorted, int number) {
-
-    for (int i = 0; i < (int)sorted.size(); i++)
-    {
-        if (number <= sorted[i])
-            return (i);
-    }
-    return (sorted.size());
-}
-
-std::deque<int>    PmergeMe::dcSort(const std::deque<int>& dC) {
-
-    std::deque<int>     sortedMaxs;
-    int                 pos;
-    int                 odd = 0;
+std::deque<int> PmergeMe::dcSort(const std::deque<int>& dC) {
 
     if (dC.size() <= 1)
         return (dC);
-    std::deque<int>    maxs = dcExtractMaxs(dC);
-    std::deque<int>    mins = dcExtractMins(dC);
-    if (dC.size() % 2 != 0)
-        odd = dC.back();
-    
-    sortedMaxs = dcSort(maxs); // recursion-sort maxs
 
-    // find pos and insert mins
+    std::deque<int> maxs = dcExtractMaxs(dC);
+    std::deque<int> mins = dcExtractMins(dC);
+    std::deque<int> sortedMaxs = dcSort(maxs);
+
     for (std::deque<int>::iterator it = mins.begin(); it < mins.end(); ++it)
-    {
-        pos =  findInsertPosition(sortedMaxs, *it);
-        sortedMaxs.insert(sortedMaxs.begin() + pos, *it);
-    }
-    // find pos and insert lonely element (if odd array)
-    if (odd)
-    {
-        pos =  findInsertPosition(sortedMaxs, odd);
-        sortedMaxs.insert(sortedMaxs.begin() + pos, odd);
-    }
-    
+        sortedMaxs.insert(std::lower_bound(sortedMaxs.begin(), sortedMaxs.end(), *it), *it);
+
+    if (dC.size() % 2 != 0)
+        sortedMaxs.insert(std::lower_bound(sortedMaxs.begin(), sortedMaxs.end(), dC.back()), dC.back());
+
     return (sortedMaxs);
 }
+
