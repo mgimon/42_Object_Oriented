@@ -35,7 +35,7 @@ bool	BitcoinExchange::isValidDateCsv(std::string str)
 }
 
 bool	BitcoinExchange::isValidDate(std::string str) {
-	// year is not checked, can be any
+
 	int	month;
 	int	day;
 
@@ -129,7 +129,7 @@ void	BitcoinExchange::processInputFile(std::ifstream& inputfile) {
 					if (it != this->database_.begin())
 						--it;
 					long lvalue = static_cast<long>(atol(value.c_str()));
-					if (lvalue > INT_MAX)
+					if (lvalue > 1000) //if (lvalue > INT_MAX)
 						std::cout << "Error: too large a number" << std::endl;
 					else if (lvalue < 0)
 						std::cout << "Error: not a positive number" << std::endl;

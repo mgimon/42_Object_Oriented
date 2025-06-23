@@ -6,7 +6,7 @@ void	getcsv(std::ifstream& csvfile, BitcoinExchange& btcTool) {
 
 	std::string	line;
 
-	// get a line!
+
 	while (std::getline(csvfile, line))
 	{
 		std::stringstream	ssline(line);
@@ -20,7 +20,7 @@ void	getcsv(std::ifstream& csvfile, BitcoinExchange& btcTool) {
 			if (!std::getline(ssline, value))
 				value = "";
 		}
-		// save, except cabeceras
+		// save except cabeceras
 		if (btcTool.isValidDateCsv(key))
 			btcTool.feedMapRow(key, value);
 	}
@@ -37,7 +37,7 @@ int main(int argc, char **argv)
 	BitcoinExchange		btcTool;
 
 	if (!inputfile)
-		return (std::cerr << "Error: could not open file." << std::endl, 1);
+		return (std::cerr << "Error: please provide a valid input file" << std::endl, 1);
 	if (!csvfile)
 		return (std::cerr << "Error: 'data.csv' file invalid or not found." << std::endl, 1);
 
