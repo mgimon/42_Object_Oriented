@@ -13,5 +13,5 @@ int main(int argc, char **argv)
 	if (!myCalculator.executeStr(argv[1]))
 		return (1);
 
-	std::cout << GREEN << "The result is: " << RESET << myCalculator.getResult() << std::endl;
+	std::cout << GREEN << "Output: " << RESET << myCalculator.getResult() << std::endl;
 }
