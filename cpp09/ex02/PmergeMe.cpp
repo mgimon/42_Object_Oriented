@@ -213,6 +213,7 @@ std::deque<int> PmergeMe::dcSort(const std::deque<int>& dC) {
 
     std::deque<int> sortedMaxs = dcSort(maxs); // recursion
 
+    // binary insertion
     for (std::deque<int>::iterator it = mins.begin(); it < mins.end(); ++it)
         sortedMaxs.insert(std::lower_bound(sortedMaxs.begin(), sortedMaxs.end(), *it), *it);
 

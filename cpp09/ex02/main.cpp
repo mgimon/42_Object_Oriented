@@ -30,8 +30,6 @@ int main(int argc, char **argv)
     std::deque<int>    sortedD = sortTool.dcSort(sortTool.getContainerD());
     gettimeofday(&end, NULL);
     sortTool.printTime("std::deque", sortTool.getN(), start, end);
-    
-
 
     return (0);
 }
