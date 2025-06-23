@@ -153,8 +153,9 @@ std::vector<int> PmergeMe::vcSort(const std::vector<int>& vC) {
 
     std::vector<int> maxs = vcExtractMaxs(vC);
     std::vector<int> mins = vcExtractMins(vC);
-    std::vector<int> sortedMaxs = vcSort(maxs);
+    std::vector<int> sortedMaxs = vcSort(maxs); // recursion
 
+    // binary insertion
     for (std::vector<int>::iterator it = mins.begin(); it < mins.end(); ++it)
         sortedMaxs.insert(std::lower_bound(sortedMaxs.begin(), sortedMaxs.end(), *it), *it);
 
