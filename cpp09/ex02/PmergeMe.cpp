@@ -210,7 +210,8 @@ std::deque<int> PmergeMe::dcSort(const std::deque<int>& dC) {
 
     std::deque<int> maxs = dcExtractMaxs(dC);
     std::deque<int> mins = dcExtractMins(dC);
-    std::deque<int> sortedMaxs = dcSort(maxs);
+
+    std::deque<int> sortedMaxs = dcSort(maxs); // recursion
 
     for (std::deque<int>::iterator it = mins.begin(); it < mins.end(); ++it)
         sortedMaxs.insert(std::lower_bound(sortedMaxs.begin(), sortedMaxs.end(), *it), *it);
