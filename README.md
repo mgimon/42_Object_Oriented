@@ -73,9 +73,9 @@ Check them out!
     </tr>
     <tr>
       <td colspan="2" align="center" style="min-width: 700px; background-color: #f0f0f0; padding: 10px;">
-        <h2><a href="https://github.com/mgimon/Inception" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:#000;">
+        <h3><a href="https://github.com/mgimon/Inception" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:#000;">
           Inception
-        </a></h2>
+        </a></h3>
       </td>
     </tr>
     <tr>
