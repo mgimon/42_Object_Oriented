@@ -76,6 +76,7 @@ Check them out!
         <h3><a href="https://github.com/mgimon/Inception" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:#000;">
           Inception
         </a></h3>
+        <br>
       </td>
     </tr>
     <tr>
