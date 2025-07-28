@@ -69,14 +69,14 @@ Check them out!
 <div align="center">
   <table style="border-collapse: collapse;">
     <tr>
-      <td colspan="2" align="center" style="min-width: 700px; background-color: #f0f0f0; padding: 10px;">
-        <h2><a href="https://github.com/mgimon/Inception" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:#000;">
-          Proyecto Inception
-        </a></h2>
-      </td>
+      <th colspan="2"><h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;42 OOP Projects&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2></th>
     </tr>
     <tr>
-      <th colspan="2"><h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;42 OOP Projects&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2></th>
+      <td colspan="2" align="center" style="min-width: 700px; background-color: #f0f0f0; padding: 10px;">
+        <h2><a href="https://github.com/mgimon/Inception" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:#000;">
+          Inception
+        </a></h2>
+      </td>
     </tr>
     <tr>
       <td align="center" style="min-width: 350px; white-space: nowrap;">
